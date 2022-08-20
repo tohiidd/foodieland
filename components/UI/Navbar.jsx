@@ -61,23 +61,18 @@ const Navbar = () => {
                    }`}
           >
             {menu.map(({ name, to }, index) => (
-              <Link
-                key={index}
-                href={to}
-                className={
-                  " user-header-option flex lg:ml-[60px] lg:py-[0px]  ml-[0px]   py-[20px] lg:w-auto  w-[250px] justify-center hover:scale-125 hover:text-blue-500 transition-all"
-                }
-              >
-                {name}
+              <Link key={index} href={to}>
+                <a className=" user-header-option flex lg:ml-[60px] lg:py-[0px]  ml-[0px]   py-[20px] lg:w-auto  w-[250px] justify-center hover:scale-125 hover:text-blue-500 transition-all">
+                  {name}
+                </a>
               </Link>
             ))}
           </ul>
         </div>
-        <Link
-          href="/"
-          className="flex flex-row items-center justify-center font-lobster font-normal text-[24px] sm:mb-[0px] mb-[0px] cursor-pointer"
-        >
-          Foodieland.
+        <Link href="/">
+          <a className="flex flex-row items-center justify-center font-lobster font-normal text-[24px] sm:mb-[0px] mb-[0px] cursor-pointer">
+            Foodieland.
+          </a>
         </Link>
       </div>
     </div>
