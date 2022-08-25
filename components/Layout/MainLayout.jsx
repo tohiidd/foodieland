@@ -1,7 +1,7 @@
 import Footer from "../UI/Footer";
 import Navbar from "../UI/navbar";
 
-function Layout({ children }) {
+function MainLayout({ children }) {
   return (
     <>
       <Navbar />
@@ -11,4 +11,4 @@ function Layout({ children }) {
   );
 }
 
-export default Layout;
+export default MainLayout;

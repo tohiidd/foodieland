@@ -24,5 +24,5 @@ module.exports = {
       rotate: { 135: "135deg", 45: "45deg  " },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };
