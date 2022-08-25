@@ -4,10 +4,6 @@ import { icons } from "../../services/utils/icons";
 const Footer = () => {
   const menu = [
     {
-      name: "Home",
-      to: "/",
-    },
-    {
       name: "Recipes",
       to: "/recipes",
     },
