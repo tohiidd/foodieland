@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { recipes } from "../../services/utils/recipeData";
+import { recipes } from "../../services/data/recipeData";
 import SliderItem from "./SliderItem";
 import Container from "../UI/Container";
 
