@@ -1,4 +1,5 @@
 import Categories from "../components/Categories/Categories";
+import Cooker from "../components/Cooker/Cooker";
 import BlueRecipe from "../components/Recipe/BlueRecipe";
 import Recipe from "../components/Recipe/Recipe";
 import HeaderSlider from "../components/Slider/HeaderSlider";
@@ -32,6 +33,7 @@ function HomePage() {
           ))}
         </div>
       </Container>
+      <Cooker />
       <Container className="mt-40">
         <div className="my-8 px-4 xl:px-0 flex flex-col items-center justify-between xl:flex-row xl:text-left lg:flex-col lg:text-center md:flex-col text-center sm:flex-col">
           <Title className=" xl:text-left xl:w-[567px] md:w-11/12 w-full md:mb-2 xl:mb-0">
