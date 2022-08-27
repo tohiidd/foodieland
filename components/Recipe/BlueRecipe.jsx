@@ -7,7 +7,7 @@ function BlueRecipe({ title, img, category, id }) {
   const [like, setLike] = useState(true);
   return (
     <div
-      className="basis-[80%] sm:basis-[65%] md:basis-[45%] lg:basis-[40%] xl:basis-[30%] 2xl:basis-[28%] flex flex-col justify-start items-center
+      className="basis-[80%] max-w-[400px] sm:basis-[65%] md:basis-[45%] lg:basis-[40%] xl:basis-[30%] 2xl:basis-[28%] flex flex-col justify-start items-center
     bg-gradient-to-b from-white to-blue-50 rounded-3xl p-[16px] font-inter relative"
     >
       <Link href={`/recipe/${id}`}>

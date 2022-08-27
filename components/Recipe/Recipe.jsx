@@ -1,14 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { icons } from "../../services/utils/icons";
 
-function Recipe() {
+function Recipe({ img, title, category, cookTime, id }) {
+  const [like, setLike] = useState(true);
   return (
-    <div className="flex flex-col basis-[85%] md:basis-[40%] lg:basis-[30%] xl:basis-[23%] h-[320px] pb-8  rounded-3xl relative">
+    <div className="flex flex-col basis-[85%] sm:basis-[40%] lg:basis-[30%] xl:basis-[23%] h-[320px] pb-8  rounded-3xl relative">
       <Link href={`/recipe/${id}`}>
-        <div className="h-[230px] hover:scale-105 transition-all rounded-3xl w-full">
-          <img
+        <div className="h-[230px] hover:scale-105 transition-all rounded-3xl w-full relative">
+          <Image
             src={img}
             alt="product"
-            className=" block w-full h-full rounded-3xl object-cover"
+            layout="fill"
+            className=" block  rounded-3xl object-cover"
           />
         </div>
       </Link>
