@@ -51,6 +51,14 @@ module.exports = {
           " linear-gradient(180deg, rgba(231, 249, 253, 0) 0%, rgba(231, 249, 253, 1) 100%)",
       },
     },
+    screens: {
+      xs: "480px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
   },
   plugins: [require("@tailwindcss/line-clamp")],
 };

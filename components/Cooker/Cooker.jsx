@@ -14,7 +14,9 @@ function Cooker() {
             Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqut enim ad minim
           </p>
-          <Button>Learn More</Button>
+          <Button className=" w-36 md:w-[180px] h-12 md:h-[60px]">
+            Learn More
+          </Button>
         </div>
         <div className="hidden sm:block w-auto md:w-[651px] h-[600px] lg:h-[500px] xl:h-[600px] bg-gradient-to-b from-white to-blue-50 relative rounded-3xl">
           <div className="absolute  w-full bottom-0  h-[597px] lg:h-[500px] xl:h-[600px] ">
