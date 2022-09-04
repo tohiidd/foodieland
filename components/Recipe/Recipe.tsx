@@ -3,7 +3,15 @@ import Link from "next/link";
 import { useState } from "react";
 import { icons } from "../../services/utils/icons";
 
-function Recipe({ img, title, category, cookTime, id }) {
+interface Props {
+  title: string;
+  img: string;
+  category: string;
+  cookTime: string;
+  id: string;
+}
+
+function Recipe({ img, title, category, cookTime, id }: Props) {
   const [like, setLike] = useState(true);
   return (
     <div className="flex flex-col basis-[85%] sm:basis-[40%] lg:basis-[30%] xl:basis-[23%] h-[320px] pb-8  rounded-3xl relative">

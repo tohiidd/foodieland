@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { IRecipe } from "../../services/types";
 import { icons } from "../../services/utils/icons";
 
 function SliderItem({
@@ -12,7 +13,7 @@ function SliderItem({
   chefImg,
   date,
   cookTime,
-}) {
+}: IRecipe) {
   const readableDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",

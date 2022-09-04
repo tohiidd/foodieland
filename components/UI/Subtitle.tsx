@@ -1,4 +1,6 @@
-function Subtitle({ children, className }) {
+import { IUi } from "../../services/types";
+
+function Subtitle({ children, className }: IUi) {
   return (
     <p
       className={`font-inter font-normal text-center text-secondary text-sm md:text-base ${className} `}

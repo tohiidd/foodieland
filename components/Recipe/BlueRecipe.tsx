@@ -2,8 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { icons } from "../../services/utils/icons";
 import { useState } from "react";
-
-function BlueRecipe({ title, img, category, id }) {
+interface Props {
+  title: string;
+  img: string;
+  category: string;
+  id: string;
+}
+function BlueRecipe({ title, img, category, id }: Props) {
   const [like, setLike] = useState(true);
   return (
     <div

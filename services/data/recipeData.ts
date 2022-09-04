@@ -10,8 +10,8 @@ export const recipes = [
     banner: "",
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-1.mkv?alt=media&token=ebaa69bb-c79a-4d97-9871-70536b00f281",
-    prep_time: "30 Minutes",
-    cook_time: "15 minutes",
+    prepTime: "30 Minutes",
+    cookTime: "15 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -22,25 +22,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "5",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "5",
   },
   {
     id: "2",
@@ -54,8 +36,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-2.mp4?alt=media&token=b3aed65f-ef32-4586-943e-a99abebe7eff",
 
-    prep_time: "20 Minutes",
-    cook_time: "10 minutes",
+    prepTime: "20 Minutes",
+    cookTime: "10 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -66,25 +48,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "10",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "10",
   },
   {
     id: "3",
@@ -98,8 +62,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-3.mkv?alt=media&token=4b5517c0-aa64-4466-a45e-653f8ba07255",
 
-    prep_time: "20 Minutes",
-    cook_time: "10 minutes",
+    prepTime: "20 Minutes",
+    cookTime: "10 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -110,25 +74,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "3",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "3",
   },
   {
     id: "4",
@@ -142,8 +88,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-4.mkv?alt=media&token=f09ec0d7-8191-4836-8fe6-c549fcce12dc",
 
-    prep_time: "10 Minutes",
-    cook_time: "5 minutes",
+    prepTime: "10 Minutes",
+    cookTime: "5 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -154,25 +100,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "13",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "13",
   },
   {
     id: "5",
@@ -186,8 +114,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-5.mkv?alt=media&token=aa2cf2d6-0b61-4526-b5d0-fd701d3d788d",
 
-    prep_time: "30 Minutes",
-    cook_time: "20 minutes",
+    prepTime: "30 Minutes",
+    cookTime: "20 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -198,25 +126,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "8",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "8",
   },
   {
     id: "6",
@@ -230,8 +140,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-6.mkv?alt=media&token=0fd67b91-b94e-4f3f-9e55-ff24f68438c6",
 
-    prep_time: "40 Minutes",
-    cook_time: "25 minutes",
+    prepTime: "40 Minutes",
+    cookTime: "25 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -242,25 +152,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "18",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "18",
   },
   {
     id: "7",
@@ -274,8 +166,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-7.mkv?alt=media&token=92521d1a-85eb-4b7c-9e44-59cdfe813909",
 
-    prep_time: "40 Minutes",
-    cook_time: "25 minutes",
+    prepTime: "40 Minutes",
+    cookTime: "25 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -286,25 +178,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "10",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "10",
   },
   {
     id: "8",
@@ -318,8 +192,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-8.mkv?alt=media&token=aa10ec48-675a-4f41-a645-1b21ccb1b149",
 
-    prep_time: "35 Minutes",
-    cook_time: "25 minutes",
+    prepTime: "35 Minutes",
+    cookTime: "25 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -330,25 +204,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "10",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "10",
   },
   {
     id: "9",
@@ -362,8 +218,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-9.mkv?alt=media&token=40e6b46e-a905-424f-a6ca-9dce3d2c218f",
 
-    prep_time: "30 Minutes",
-    cook_time: "10 minutes",
+    prepTime: "30 Minutes",
+    cookTime: "10 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -374,25 +230,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "20",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "20",
   },
   {
     id: "10",
@@ -406,8 +244,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-10.mkv?alt=media&token=77299319-4aa6-42f9-bfc3-cb844289eb0c",
 
-    prep_time: "12 Minutes",
-    cook_time: "10 minutes",
+    prepTime: "12 Minutes",
+    cookTime: "10 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -418,25 +256,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "8",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "8",
   },
   {
     id: "11",
@@ -450,8 +270,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-11.mkv?alt=media&token=6fcce54c-4244-4306-84e6-b5326c2d11f0",
 
-    prep_time: "22 Minutes",
-    cook_time: "10 minutes",
+    prepTime: "22 Minutes",
+    cookTime: "10 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -462,25 +282,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "39",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "39",
   },
   {
     id: "12",
@@ -494,8 +296,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-12.mkv?alt=media&token=d19f02f4-607f-42d1-980b-419a273c4218",
 
-    prep_time: "52 Minutes",
-    cook_time: "40 minutes",
+    prepTime: "52 Minutes",
+    cookTime: "40 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -506,25 +308,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "109",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "109",
   },
   {
     id: "13",
@@ -538,8 +322,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-13.mkv?alt=media&token=1ad28553-ef63-4bec-bddd-716e5603416c",
 
-    prep_time: "42 Minutes",
-    cook_time: "38 minutes",
+    prepTime: "42 Minutes",
+    cookTime: "38 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -550,25 +334,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "99",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "99",
   },
   {
     id: "14",
@@ -582,8 +348,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-14.mkv?alt=media&token=cb41cbcf-1418-46d6-85f4-8741acd539dc",
 
-    prep_time: "42 Minutes",
-    cook_time: "38 minutes",
+    prepTime: "42 Minutes",
+    cookTime: "38 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -594,25 +360,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "79",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "79",
   },
   {
     id: "15",
@@ -626,8 +374,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-15.mkv?alt=media&token=850c9fba-5932-434f-9b2f-58c5efcce0d1",
 
-    prep_time: "36 Minutes",
-    cook_time: "28 minutes",
+    prepTime: "36 Minutes",
+    cookTime: "28 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -638,25 +386,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "63",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "63",
   },
   {
     id: "16",
@@ -670,8 +400,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-16.mkv?alt=media&token=0aaa6322-bdc0-4c78-81be-7e7ad1c143c0",
 
-    prep_time: "15 Minutes",
-    cook_time: "10 minutes",
+    prepTime: "15 Minutes",
+    cookTime: "10 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -682,25 +412,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "12",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "12",
   },
   {
     id: "17",
@@ -714,8 +426,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-17.mkv?alt=media&token=324da5f3-7ed2-4de7-a245-dbdc75f8ec0b",
 
-    prep_time: "25 Minutes",
-    cook_time: "20 minutes",
+    prepTime: "25 Minutes",
+    cookTime: "20 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -726,25 +438,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "52",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "52",
   },
   {
     id: "18",
@@ -758,8 +452,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-18.mkv?alt=media&token=fa9e8c73-c416-4f3f-8f85-86bdc286766c",
 
-    prep_time: "15 Minutes",
-    cook_time: "10 minutes",
+    prepTime: "15 Minutes",
+    cookTime: "10 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -770,25 +464,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "17",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "17",
   },
   {
     id: "19",
@@ -802,8 +478,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-19.mkv?alt=media&token=31319d1b-d906-4dc8-bc75-ed427805cdbc",
 
-    prep_time: "21 Minutes",
-    cook_time: "17 minutes",
+    prepTime: "21 Minutes",
+    cookTime: "17 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -814,25 +490,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "47",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "47",
   },
   {
     id: "20",
@@ -846,8 +504,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-20.mkv?alt=media&token=953b992c-ef5a-463f-b525-8154a8f06b60",
 
-    prep_time: "15 Minutes",
-    cook_time: "10 minutes",
+    prepTime: "15 Minutes",
+    cookTime: "10 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -858,25 +516,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "600",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "600",
   },
   {
     id: "21",
@@ -890,8 +530,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-21.mkv?alt=media&token=eb149c16-4b65-4367-bc10-2bf8e17bbf2b",
 
-    prep_time: "24 Minutes",
-    cook_time: "18 minutes",
+    prepTime: "24 Minutes",
+    cookTime: "18 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -902,25 +542,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "250",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "250",
   },
   {
     id: "22",
@@ -934,8 +556,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-22.mkv?alt=media&token=712758f6-6814-4673-9d46-717fa60343f6",
 
-    prep_time: "24 Minutes",
-    cook_time: "18 minutes",
+    prepTime: "24 Minutes",
+    cookTime: "18 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -946,25 +568,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "315",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "315",
   },
   {
     id: "23",
@@ -978,8 +582,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-23.mkv?alt=media&token=53ceeea6-97b4-43ec-82ed-5eaa5b786094",
 
-    prep_time: "14 Minutes",
-    cook_time: "8 minutes",
+    prepTime: "14 Minutes",
+    cookTime: "8 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -990,25 +594,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "115",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "115",
   },
   {
     id: "24",
@@ -1022,8 +608,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-24.mkv?alt=media&token=db2cdc44-b804-4c91-b21c-d29bc52ba9d2",
 
-    prep_time: "20 Minutes",
-    cook_time: "10 minutes",
+    prepTime: "20 Minutes",
+    cookTime: "10 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -1034,25 +620,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "265",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "265",
   },
   {
     id: "25",
@@ -1067,8 +635,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-25.mkv?alt=media&token=18dbcc98-8326-497c-8285-b725afb262fe",
 
-    prep_time: "30 Minutes",
-    cook_time: "25 minutes",
+    prepTime: "30 Minutes",
+    cookTime: "25 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -1079,25 +647,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "965",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "965",
   },
   {
     id: "26",
@@ -1112,8 +662,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-26.mkv?alt=media&token=81a6ed31-c371-4148-aed8-03134e807da3",
 
-    prep_time: "20 Minutes",
-    cook_time: "20 minutes",
+    prepTime: "20 Minutes",
+    cookTime: "20 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -1124,25 +674,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "89",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "89",
   },
   {
     id: "27",
@@ -1157,8 +689,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-27.mkv?alt=media&token=a2888ad5-4837-4225-ac4b-f8eac069e32b",
 
-    prep_time: "20 Minutes",
-    cook_time: "20 minutes",
+    prepTime: "20 Minutes",
+    cookTime: "20 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -1169,25 +701,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "89",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "89",
   },
   {
     id: "28",
@@ -1202,8 +716,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-28.mkv?alt=media&token=b6430d78-202b-4358-89a6-2bc322298b98",
 
-    prep_time: "30 Minutes",
-    cook_time: "20 minutes",
+    prepTime: "30 Minutes",
+    cookTime: "20 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -1214,25 +728,7 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "289",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "289",
   },
   {
     id: "29",
@@ -1247,8 +743,8 @@ export const recipes = [
     video:
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-29.mkv?alt=media&token=9a925686-de7e-477f-93ae-55892d7b7039",
 
-    prep_time: "40 Minutes",
-    cook_time: "35 minutes",
+    prepTime: "40 Minutes",
+    cookTime: "35 minutes",
     date: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -1259,24 +755,6 @@ export const recipes = [
       carbohydrate: "22.3 g",
       cholesterol: "37.4 mg",
     },
-    liked: "203",
-    comments: [
-      {
-        id: "1",
-        body: "first comment",
-        username: "john",
-        userId: "2",
-        createdAt: "2022-06-10T16:00:12.010+02:00",
-        replies: "",
-      },
-      {
-        id: "2",
-        body: "second comment",
-        username: "jake",
-        userId: "4",
-        createdAt: "2022-09-10T23:01:12.010+02:00",
-        replies: "",
-      },
-    ],
+    likes: "203",
   },
 ];

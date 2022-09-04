@@ -1,4 +1,6 @@
-function Title({ children, className }) {
+import { IUi } from "../../services/types";
+
+function Title({ children, className }: IUi) {
   return (
     <h2
       className={`font-inter font-semibold text-center text-4xl lg:text-5xl ${className} `}

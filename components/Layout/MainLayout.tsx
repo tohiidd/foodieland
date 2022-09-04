@@ -1,7 +1,8 @@
+import { PropsWithChildren, ReactNode } from "react";
 import Footer from "../UI/Footer";
-import Navbar from "../UI/navbar";
+import Navbar from "../UI/Navbar";
 
-function MainLayout({ children }) {
+function MainLayout({ children }: PropsWithChildren) {
   return (
     <>
       <Navbar />

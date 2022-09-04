@@ -1,7 +1,12 @@
 import Image from "next/image";
 import { icons } from "../../services/utils/icons";
 
-function Instagram({ imageUrl, caption, date }) {
+interface Props {
+  imageUrl: string;
+  caption: string;
+  date: string;
+}
+function Instagram({ imageUrl, caption, date }: Props) {
   return (
     <div className="bg-white basis-full xs:basis-[46%]  md:basis-[22%]  pb-8  rounded-md relative">
       <div className="flex justify-between items-center py-1 px-2">

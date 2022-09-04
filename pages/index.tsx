@@ -51,14 +51,14 @@ function HomePage() {
         <div className="flex gap-6 justify-center w-[70%] mx-auto xl:justify-between items-center sm:w-full flex-wrap">
           {recipes
             .slice(8, 16)
-            .map(({ img, title, category, id, cook_time }) => (
+            .map(({ img, title, category, id, cookTime }) => (
               <Recipe
                 key={id}
                 id={id}
                 img={img}
                 title={title}
                 category={category}
-                cookTime={cook_time}
+                cookTime={cookTime}
               />
             ))}
         </div>

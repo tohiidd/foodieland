@@ -1,4 +1,6 @@
-function Button({ children, className }) {
+import { IUi } from "../../services/types";
+
+function Button({ children, className }: IUi) {
   return (
     <button
       className={`${className} flex justify-center items-center bg-black text-white rounded-2xl text-xs md:text-base `}
