@@ -11,10 +11,10 @@ export interface IRecipe {
   title: string;
   chef: string;
   chefImg: string;
-  img: string;
+  img?: string;
   banner: string;
-  video: string;
-  prepTime: string;
+  video?: string;
+  prepTime?: string;
   cookTime: string;
   date: string;
   description: string;

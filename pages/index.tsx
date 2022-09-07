@@ -4,6 +4,7 @@ import Instagram from "../components/Instagram/Instagram";
 import BlueRecipe from "../components/Recipe/BlueRecipe";
 import Recipe from "../components/Recipe/Recipe";
 import HeaderSlider from "../components/Slider/HeaderSlider";
+import Subscribe from "../components/Subscribe/Subscribe";
 import Button from "../components/UI/Button";
 import Container from "../components/UI/Container";
 import Subtitle from "../components/UI/Subtitle";
@@ -14,7 +15,7 @@ import { icons } from "../services/utils/icons";
 
 function HomePage() {
   return (
-    <div>
+    <section>
       <HeaderSlider />
       <Categories />
       <Container>
@@ -38,31 +39,7 @@ function HomePage() {
         </div>
       </Container>
       <Cooker />
-      <Container className="mt-20 md:mt-40">
-        <div className="my-8 px-4 xl:px-0 flex flex-col items-center justify-between xl:flex-row xl:text-left lg:flex-col lg:text-center md:flex-col text-center sm:flex-col">
-          <Title className=" xl:text-left xl:w-[567px] md:w-11/12 w-full md:mb-2 xl:mb-0">
-            Try this delicious recipe to make your day
-          </Title>
-          <Subtitle className="xl:text-left xl:w-[620px] lg:w-full w-[90%]">
-            Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqut enim ad minim
-          </Subtitle>
-        </div>
-        <div className="flex gap-4 sm:gap-6 justify-center mx-auto xl:justify-between items-center sm:w-full flex-wrap">
-          {recipes
-            .slice(8, 16)
-            .map(({ img, title, category, id, cookTime }) => (
-              <Recipe
-                key={id}
-                id={id}
-                img={img}
-                title={title}
-                category={category}
-                cookTime={cookTime}
-              />
-            ))}
-        </div>
-      </Container>
+
       <section className="mt-20 sm:mt-40 bg-gradient-blueSky">
         <Container>
           <div className="text-center">
@@ -93,7 +70,33 @@ function HomePage() {
           </div>
         </Container>
       </section>
-    </div>
+      <Container className="mt-20 md:mt-40">
+        <div className="my-8 px-4 xl:px-0 flex flex-col items-center justify-between xl:flex-row xl:text-left lg:flex-col lg:text-center md:flex-col text-center sm:flex-col">
+          <Title className=" xl:text-left xl:w-[567px] md:w-11/12 w-full md:mb-2 xl:mb-0">
+            Try this delicious recipe to make your day
+          </Title>
+          <Subtitle className="xl:text-left xl:w-[620px] lg:w-full w-[90%]">
+            Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqut enim ad minim
+          </Subtitle>
+        </div>
+        <div className="flex gap-4 sm:gap-6 justify-center mx-auto xl:justify-between items-center sm:w-full flex-wrap">
+          {recipes
+            .slice(8, 16)
+            .map(({ img, title, category, id, cookTime }) => (
+              <Recipe
+                key={id}
+                id={id}
+                img={img}
+                title={title}
+                category={category}
+                cookTime={cookTime}
+              />
+            ))}
+        </div>
+      </Container>
+      <Subscribe />
+    </section>
   );
 }
 export default HomePage;

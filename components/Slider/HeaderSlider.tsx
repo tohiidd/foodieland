@@ -7,12 +7,32 @@ import "swiper/css/pagination";
 import { recipes } from "../../services/data/recipeData";
 import SliderItem from "./SliderItem";
 import Container from "../UI/Container";
+import { icons } from "../../services/utils/icons";
+import classes from "./slider.module.css";
 
 function HeaderSlider() {
   const sliderData = recipes.filter((recipe) => recipe.banner !== "");
   return (
-    <Container className={"my-12"}>
-      <Swiper spaceBetween={30} navigation loop={true} modules={[Navigation]}>
+    <Container className="relative my-12">
+      <div
+        className={`swiper-button-prev bg-[#FFFFFF99] py-6 px-3 rounded-[50%] after:hidden ${classes.arrow}`}
+      >
+        {icons.arrowLeft()}
+      </div>
+      <div
+        className={`swiper-button-next bg-[#FFFFFF99] py-6 px-3 rounded-[50%] after:hidden ${classes.arrow}`}
+      >
+        {icons.arrowRight()}
+      </div>
+      <Swiper
+        spaceBetween={30}
+        loop={true}
+        modules={[Navigation]}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
+      >
         {sliderData.map((recipe) => (
           <SwiperSlide key={recipe.id}>
             <SliderItem
@@ -24,7 +44,7 @@ function HeaderSlider() {
               chefImg={recipe.chefImg}
               date={recipe.date}
               description={recipe.description}
-              cookTime={recipe.cook_time}
+              cookTime={recipe.cookTime}
             />
           </SwiperSlide>
         ))}
