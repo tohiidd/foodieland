@@ -12,11 +12,11 @@ function BlueRecipe({ title, img, category, id }: Props) {
   const [like, setLike] = useState(true);
   return (
     <div
-      className="basis-[80%] max-w-[400px] sm:basis-[65%] md:basis-[45%] lg:basis-[40%] xl:basis-[30%] 2xl:basis-[28%] flex flex-col justify-start items-center
+      className="  basis-full sm:max-w-[400px] sm:basis-[48%] md:basis-[45%] lg:basis-[40%] xl:basis-[30%] 2xl:basis-[28%] flex flex-col justify-start items-center
     bg-gradient-to-b from-white to-blue-50 rounded-3xl p-[16px] font-inter relative"
     >
       <Link href={`/recipe/${id}`}>
-        <div className="w-full h-[220px]   sm:h-[240px] lg:h-[260px] hover:scale-105 transition-all relative mb-6">
+        <div className="w-[100%] h-[250px] xs:h-[340px] sm:w-full sm:h-[220px]   md:h-[240px] lg:h-[260px] hover:scale-105 transition-all relative mb-6">
           <Image
             className="rounded-3xl "
             src={img}
@@ -35,7 +35,7 @@ function BlueRecipe({ title, img, category, id }: Props) {
         </span>
       </div>
       <Link href={`/recipe/${id}`}>
-        <a className="font-semibold text-xl md:text-2xl mb-6">{title}</a>
+        <a className="font-semibold text-xl md:text-2xl mb-6 w-full">{title}</a>
       </Link>
       <div className="flex justify-start w-full">
         <div className="flex flex-row-reverse pr-7">

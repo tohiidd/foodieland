@@ -25,7 +25,7 @@ function HomePage() {
             tempor incididunt ut labore et dolore magna aliqut enim ad minim
           </Subtitle>
         </div>
-        <div className="flex flex-row flex-wrap justify-center gap-10">
+        <div className="flex flex-row flex-wrap justify-center gap-6 md:gap-10">
           {recipes.slice(0, 8).map(({ title, img, category, id }) => (
             <BlueRecipe
               key={id}
@@ -38,7 +38,7 @@ function HomePage() {
         </div>
       </Container>
       <Cooker />
-      <Container className="mt-40">
+      <Container className="mt-20 md:mt-40">
         <div className="my-8 px-4 xl:px-0 flex flex-col items-center justify-between xl:flex-row xl:text-left lg:flex-col lg:text-center md:flex-col text-center sm:flex-col">
           <Title className=" xl:text-left xl:w-[567px] md:w-11/12 w-full md:mb-2 xl:mb-0">
             Try this delicious recipe to make your day
@@ -48,7 +48,7 @@ function HomePage() {
             tempor incididunt ut labore et dolore magna aliqut enim ad minim
           </Subtitle>
         </div>
-        <div className="flex gap-6 justify-center w-[70%] mx-auto xl:justify-between items-center sm:w-full flex-wrap">
+        <div className="flex gap-4 sm:gap-6 justify-center mx-auto xl:justify-between items-center sm:w-full flex-wrap">
           {recipes
             .slice(8, 16)
             .map(({ img, title, category, id, cookTime }) => (
@@ -63,7 +63,7 @@ function HomePage() {
             ))}
         </div>
       </Container>
-      <section className="mt-40 bg-gradient-blueSky">
+      <section className="mt-20 sm:mt-40 bg-gradient-blueSky">
         <Container>
           <div className="text-center">
             <Title className="mb-5 md:mb-10">

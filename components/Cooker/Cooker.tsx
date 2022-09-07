@@ -4,7 +4,7 @@ import Container from "../UI/Container";
 
 function Cooker() {
   return (
-    <Container className="mt-40">
+    <Container className="mt-20 md:mt-40">
       <div className="flex lg:justify-between lg:flex-row flex-col justify-center md:items-center">
         <div className="flex flex-col sm:mb-10 md:mb-20 justify-center items-center lg:items-start">
           <h1 className="font-inter font-semibold text-4xl lg:text-4xl xl:text-5xl w-auto lg:w-[450px] xl:w-[526px]  tracking-tighter mb-[24px] text-center lg:text-left">

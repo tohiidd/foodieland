@@ -14,9 +14,9 @@ interface Props {
 function Recipe({ img, title, category, cookTime, id }: Props) {
   const [like, setLike] = useState(true);
   return (
-    <div className="flex flex-col basis-[85%] sm:basis-[40%] lg:basis-[30%] xl:basis-[23%] h-[320px] pb-8  rounded-3xl relative">
+    <div className="flex flex-col basis-[85%] xs:basis-[46%] lg:basis-[30%] xl:basis-[23%] h-[320px] pb-8  rounded-3xl relative">
       <Link href={`/recipe/${id}`}>
-        <div className="h-[230px] hover:scale-105 transition-all rounded-3xl w-full relative">
+        <div className="h-[240px] xs:h-[200px] sm:h-[230px] hover:scale-105 transition-all rounded-3xl w-full relative">
           <Image
             src={img}
             alt="product"
