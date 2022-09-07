@@ -70,7 +70,7 @@ const Navbar = () => {
           <ul
             className={`justify-center items-center font-medium font-inter lg:flex lg:flex-row lg:bg-transparent lg:mt-[0px] lg:mr-[0px]
                  right-[120px] lg:right-auto lg:translate-x-0   translate-x-[50%]  text-black  flex-col  none lg:relative overflow-hidden
-                   z-30  absolute  mt-[20px]  bg-yellow-50  rounded-md ${
+                   lg:overflow-visible z-30  absolute  mt-[20px]  bg-yellow-50  rounded-md ${
                      open || " hidden"
                    }`}
           >
@@ -80,6 +80,7 @@ const Navbar = () => {
                   className={`${
                     pathname === to ? "scale-125 text-blue-500" : ""
                   } flex lg:ml-[60px] lg:py-[0px]  ml-[0px]   py-[20px] lg:w-auto  w-[250px] justify-center hover:scale-125 hover:text-blue-500 transition-all`}
+                  onClick={() => setOpen(false)}
                 >
                   {name}
                 </a>

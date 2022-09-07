@@ -8,20 +8,15 @@ import { recipes } from "../../services/data/recipeData";
 import SliderItem from "./SliderItem";
 import Container from "../UI/Container";
 import { icons } from "../../services/utils/icons";
-import classes from "./slider.module.css";
 
 function HeaderSlider() {
   const sliderData = recipes.filter((recipe) => recipe.banner !== "");
   return (
     <Container className="relative my-12">
-      <div
-        className={`swiper-button-prev bg-[#FFFFFF99] py-6 px-3 rounded-[50%] after:hidden ${classes.arrow}`}
-      >
+      <div className="swiper-button-prev bg-[#FFFFFF99] py-5 lg:py-7 px-3 rounded-[50%] after:hidden child:fill-[#00000099]  child:w-5 lg:child:w-7 !w-auto">
         {icons.arrowLeft()}
       </div>
-      <div
-        className={`swiper-button-next bg-[#FFFFFF99] py-6 px-3 rounded-[50%] after:hidden ${classes.arrow}`}
-      >
+      <div className="swiper-button-next bg-[#FFFFFF99] py-5 lg:py-7 px-3 rounded-[50%] after:hidden child:fill-[#00000099] child:w-5 lg:child:w-7 !w-auto">
         {icons.arrowRight()}
       </div>
       <Swiper

@@ -23,7 +23,7 @@ function SliderItem({
   return (
     <div className="carousel-item flex rounded-3xl overflow-hidden font-inter ">
       <div className="hidden md:block basis-1/2 bg-lameBlue p-5 sm:p-7 lg:p-9">
-        <div className="bg-white w-32 lg:w-36 rounded-2xl p-2 text-center">
+        <div className="flex items-center  bg-white w-32 lg:w-36 rounded-2xl p-2 text-center">
           <Image
             width={"20%"}
             height={"20%"}

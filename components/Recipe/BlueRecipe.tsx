@@ -16,7 +16,7 @@ function BlueRecipe({ title, img, category, id }: Props) {
     bg-gradient-to-b from-white to-blue-50 rounded-3xl p-[16px] font-inter relative"
     >
       <Link href={`/recipe/${id}`}>
-        <div className="w-[100%] h-[250px] xs:h-[340px] sm:w-full sm:h-[220px]   md:h-[240px] lg:h-[260px] hover:scale-105 transition-all relative mb-6">
+        <div className="w-[100%] h-[250px] xs:h-[340px] sm:w-full sm:h-[220px] cursor-pointer  md:h-[240px] lg:h-[260px] hover:scale-105 transition-all relative mb-6">
           <Image
             className="rounded-3xl "
             src={img}

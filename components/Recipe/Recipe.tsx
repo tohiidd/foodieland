@@ -16,7 +16,7 @@ function Recipe({ img, title, category, cookTime, id }: Props) {
   return (
     <div className="flex flex-col basis-[85%] xs:basis-[46%] lg:basis-[30%] xl:basis-[23%] h-[320px] pb-8  rounded-3xl relative">
       <Link href={`/recipe/${id}`}>
-        <div className="h-[240px] xs:h-[200px] sm:h-[230px] hover:scale-105 transition-all rounded-3xl w-full relative">
+        <div className="h-[240px] xs:h-[200px] sm:h-[230px] cursor-pointer hover:scale-105 transition-all rounded-3xl w-full relative">
           <Image
             src={img}
             alt="product"
@@ -35,7 +35,7 @@ function Recipe({ img, title, category, cookTime, id }: Props) {
       </div>
       <Link href={`/recipe/${id}`}>
         <div>
-          <h2 className="text-lg font-semibold mt-1 tracking-[-0.04em] leading-[26px] text-black">
+          <h2 className="cursor-pointer text-lg font-semibold mt-1 tracking-[-0.04em] leading-[26px] text-black">
             {title}
           </h2>
         </div>
