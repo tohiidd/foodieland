@@ -28,7 +28,7 @@ function Pagination({
           className={`${
             currentPage === 1 && "invisible"
           } blog-page-arrow w-10 h-10  mr-2 text-center flex justify-center items-center  text-black border-2 border-gray-200
-            rounded-md cursor-pointer hover:bg-gray-100 transition-all child:w-4`}
+            rounded-md cursor-pointer hover:bg-gray-100 transition-all child:w-3`}
         >
           {icons.arrowLeft()}
         </li>
@@ -52,7 +52,7 @@ function Pagination({
           className={`${
             currentPage === pageNumber.length && "invisible"
           } blog-page-arrow w-10 h-10  mr-2 text-center flex justify-center items-center  text-black border-2  border-gray-200 
-           rounded-md cursor-pointer hover:bg-gray-100 transition-all child:w-4`}
+           rounded-md cursor-pointer hover:bg-gray-100 transition-all child:w-3`}
         >
           {icons.arrowRight()}
         </li>

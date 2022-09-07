@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { ChangeEvent, useState } from "react";
 import Pagination from "../../components/Pagination/Pagination";
 import Recipe from "../../components/Recipe/Recipe";
@@ -5,23 +6,59 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import Subscribe from "../../components/Subscribe/Subscribe";
 import Container from "../../components/UI/Container";
 import Title from "../../components/UI/Title";
-import { recipes as recipesData } from "../../services/data/recipeData";
+import { categoriesData } from "../../services/data/categoriesData";
+import { recipes as recipeList } from "../../services/data/recipeData";
 
 function Recipes() {
-  const [recipes, setRecipes] = useState(recipesData);
+  const [recipes, setRecipes] = useState(recipeList);
   const [currentPage, setCurrentPage] = useState(1);
   const [recipesPerPage] = useState(12);
 
+  const router = useRouter();
+  let currentQuery = router.query.category as string;
+  let filteredRecipes = recipes;
+  if (currentQuery) {
+    filteredRecipes = recipes.filter((recipe) =>
+      currentQuery.includes(recipe.category)
+    );
+  }
+
   const indexOfLastRecipe = currentPage * recipesPerPage;
   const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
-  const currentRecipes = recipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
+  const currentRecipes = filteredRecipes.slice(
+    indexOfFirstRecipe,
+    indexOfLastRecipe
+  );
 
   const searchHandler = (event: ChangeEvent<HTMLInputElement>) => {
     let keyword = event?.target.value;
-    let data = recipes.filter((item) =>
+    let data = recipeList.filter((item) =>
       item.title.toLowerCase().includes(keyword.toLocaleLowerCase())
     );
     setRecipes(data);
+  };
+
+  const selectCategoryHandler = (name: string) => () => {
+    let queryLength = currentQuery?.split("/").length;
+
+    if (currentQuery?.includes(name) && queryLength === 2) {
+      delete router.query.category;
+      router.push(router);
+    } else if (currentQuery?.includes(name) && queryLength !== 2) {
+      router.push({
+        pathname: "/recipes",
+        query: {
+          category: currentQuery?.replace(`/${name}`, ""),
+        },
+      });
+    } else {
+      router.push({
+        pathname: "/recipes",
+        query: {
+          category: `${currentQuery ? `${currentQuery}` : ""}/${name}`,
+        },
+      });
+    }
   };
   return (
     <Container className="mt-16 mb-32">
@@ -33,34 +70,33 @@ function Recipes() {
         placeholder={"search for recipes"}
       />
       <div>
-        {/* <div className="basis-[20%]"> */}
-        {/* <div className="flex flex-col items-center lg:items-start justify-between cursor-pointer "> */}
-
-        {/* <ul className="flex flex-row lg:flex-col w-3/5 md:w-full justify-center items-start gap-4 lg:gap-0 flex-wrap  ">
-              {categoriesData.map(({ id, name }) => (
-                <CategoryFilter
-                  key={id}
-                  name={name}
-                  id={id}
-                  checkHandler={checkHandler}
-                  checked={categoryChecked[name]}
-                />
-              ))}
-            </ul> */}
-        {/* </div> */}
-        {/* </div> */}
-        <div className=" flex gap-6 justify-center  mx-auto xl:justify-start items-center  flex-wrap min-h-[600px]">
-          {currentRecipes.map(({ img, title, category, id, cookTime }) => (
-            <Recipe
+        <ul className="flex w-full justify-center gap-4 md:gap-8 flex-wrap mb-6 ">
+          {categoriesData.map(({ id, name }) => (
+            <li
               key={id}
-              id={id}
-              img={img}
-              title={title}
-              category={category}
-              cookTime={cookTime}
-            />
+              className={`${
+                currentQuery?.includes(name)
+                  ? "bg-blue-100 border-blue-700 text-blue-700 "
+                  : ""
+              } gap-2 border border-gray-500 text-gray-500 cursor-pointer rounded-3xl py-2 px-4 my-1 md:my-3 transition-all hover:bg-blue-100 hover:border-blue-700 hover:text-blue-700 `}
+              onClick={selectCategoryHandler(name)}
+            >
+              <div className="capitalize">{name}</div>
+            </li>
           ))}
-        </div>
+        </ul>
+      </div>
+      <div className=" flex gap-6 justify-center  mx-auto   flex-wrap min-h-[600px]">
+        {currentRecipes.map(({ img, title, category, id, cookTime }) => (
+          <Recipe
+            key={id}
+            id={id}
+            img={img}
+            title={title}
+            category={category}
+            cookTime={cookTime}
+          />
+        ))}
       </div>
       <div className="w-auto">
         {recipes.length / recipesPerPage > 1 && (

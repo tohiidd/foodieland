@@ -25,11 +25,11 @@ function Recipe({ img, title, category, cookTime, id }: Props) {
           />
         </div>
       </Link>
-      <div className="w-[48px] h-[48px] bg-white rounded-full flex justify-center items-center absolute top-[12px] right-[16px] ">
-        <span
-          onClick={() => setLike((prev) => !prev)}
-          className="w-[20.25px] h-[18px] inline-block cursor-pointer"
-        >
+      <div
+        onClick={() => setLike((prev) => !prev)}
+        className="w-[48px] h-[48px] cursor-pointer bg-white rounded-full flex justify-center items-center absolute top-[12px] right-[16px] "
+      >
+        <span className="w-[20.25px] h-[18px] inline-block ">
           {like ? icons.whiteHeat() : icons.redHeat()}
         </span>
       </div>
