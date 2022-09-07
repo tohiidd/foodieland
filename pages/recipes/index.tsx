@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import Pagination from "../../components/Pagination/Pagination";
 import Recipe from "../../components/Recipe/Recipe";
 import SearchBar from "../../components/SearchBar/SearchBar";
@@ -14,6 +14,9 @@ function Recipes() {
   const [currentPage, setCurrentPage] = useState(1);
   const [recipesPerPage] = useState(12);
 
+  let indexOfLastRecipe = currentPage * recipesPerPage;
+  let indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
+
   const router = useRouter();
   let currentQuery = router.query.category as string;
   let filteredRecipes = recipes;
@@ -22,13 +25,6 @@ function Recipes() {
       currentQuery.includes(recipe.category)
     );
   }
-
-  const indexOfLastRecipe = currentPage * recipesPerPage;
-  const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
-  const currentRecipes = filteredRecipes.slice(
-    indexOfFirstRecipe,
-    indexOfLastRecipe
-  );
 
   const searchHandler = (event: ChangeEvent<HTMLInputElement>) => {
     let keyword = event?.target.value;
@@ -59,7 +55,9 @@ function Recipes() {
         },
       });
     }
+    setCurrentPage(1);
   };
+
   return (
     <Container className="mt-16 mb-32">
       <div className="mb-14">
@@ -87,22 +85,24 @@ function Recipes() {
         </ul>
       </div>
       <div className=" flex gap-6 justify-center  mx-auto   flex-wrap min-h-[600px]">
-        {currentRecipes.map(({ img, title, category, id, cookTime }) => (
-          <Recipe
-            key={id}
-            id={id}
-            img={img}
-            title={title}
-            category={category}
-            cookTime={cookTime}
-          />
-        ))}
+        {filteredRecipes
+          .slice(indexOfFirstRecipe, indexOfLastRecipe)
+          .map(({ img, title, category, id, cookTime }) => (
+            <Recipe
+              key={id}
+              id={id}
+              img={img}
+              title={title}
+              category={category}
+              cookTime={cookTime}
+            />
+          ))}
       </div>
       <div className="w-auto">
-        {recipes.length / recipesPerPage > 1 && (
+        {filteredRecipes.length / recipesPerPage > 1 && (
           <Pagination
             postPerPage={recipesPerPage}
-            totalPosts={recipes.length}
+            totalPosts={filteredRecipes.length}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
           />

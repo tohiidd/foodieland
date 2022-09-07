@@ -3,7 +3,6 @@ import { ReactNode } from "react";
 export interface IUi {
   children: ReactNode;
   className?: string;
-  onClick?: any;
 }
 
 export interface IRecipe {
