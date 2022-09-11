@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IRecipe } from "../../services/types";
+import { getDate } from "../../services/utils/getDate.";
 import { icons } from "../../services/utils/icons";
 
 function SliderItem({
@@ -14,11 +15,7 @@ function SliderItem({
   date,
   cookTime,
 }: IRecipe) {
-  const readableDate = new Date(date).toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const readableDate = getDate(date);
 
   return (
     <div className="carousel-item flex rounded-3xl overflow-hidden font-inter ">

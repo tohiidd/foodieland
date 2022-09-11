@@ -21,3 +21,12 @@ export interface IRecipe {
   nutrition?: any;
   likes?: string;
 }
+export interface IArticle {
+  id: string;
+  title: string;
+  author: string;
+  img: string;
+  createdAt: string;
+  description: string;
+  profile: any;
+}

@@ -2,11 +2,11 @@ import { IUi } from "../../services/types";
 
 function Subtitle({ children, className }: IUi) {
   return (
-    <p
+    <h6
       className={`font-inter font-normal text-center text-secondary text-sm md:text-base ${className} `}
     >
       {children}
-    </p>
+    </h6>
   );
 }
 

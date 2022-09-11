@@ -65,7 +65,7 @@ function Recipes() {
       </div>
       <SearchBar
         searchHandler={searchHandler}
-        placeholder={"search for recipes"}
+        placeholder={"search recipes..."}
       />
       <div>
         <ul className="flex w-full justify-center gap-4 md:gap-8 flex-wrap mb-6 ">
