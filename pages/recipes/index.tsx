@@ -9,7 +9,7 @@ import Title from "../../components/UI/Title";
 import { categoriesData } from "../../services/data/categoriesData";
 import { recipes as recipeList } from "../../services/data/recipeData";
 
-function Recipes() {
+function RecipesPage() {
   const [recipes, setRecipes] = useState(recipeList);
   const [currentPage, setCurrentPage] = useState(1);
   const [recipesPerPage] = useState(12);
@@ -113,4 +113,4 @@ function Recipes() {
   );
 }
 
-export default Recipes;
+export default RecipesPage;

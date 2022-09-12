@@ -33,7 +33,7 @@ function SliderItem({
           </span>
         </div>
         <div className="mt-4 mb-4 lg:mt-6 lg:mb-6 sm:h-[80px] md:h-[96px] xl:h-[120px]">
-          <h2 className="carousel-title text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold line-clamp-2">
+          <h2 className=" text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold line-clamp-2">
             {title}
           </h2>
         </div>

@@ -1,23 +1,22 @@
 import { ChangeEvent, useState } from "react";
 import Article from "../../components/Article/Article";
 import Pagination from "../../components/Pagination/Pagination";
+import RecipeList from "../../components/Recipe/RecipeList";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import Subscribe from "../../components/Subscribe/Subscribe";
 import Container from "../../components/UI/Container";
 import Subtitle from "../../components/UI/Subtitle";
 import Title from "../../components/UI/Title";
 import { articleData } from "../../services/data/article";
+import { recipes } from "../../services/data/recipeData";
 
-function Blog() {
+function BlogPage() {
   const [articles, setArticles] = useState(articleData);
   const [currentPage, setCurrentPage] = useState(1);
   const [articlesPerPage] = useState(6);
 
   const indexOfLastArticle = currentPage * articlesPerPage;
   const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
-  const currentArticles = articles.slice(
-    indexOfFirstArticle,
-    indexOfLastArticle
-  );
 
   const searchHandler = (event: ChangeEvent<HTMLInputElement>) => {
     let keyword = event?.target.value;
@@ -39,34 +38,48 @@ function Blog() {
         searchHandler={searchHandler}
         placeholder={"search articles, news..."}
       />
-      <section className="w-11/12 xl:w-full mx-auto flex flex-wrap lg:flex-nowrap gap-10 font-inter my-10 lg:my-20">
+      <section className=" flex flex-wrap lg:flex-nowrap gap-10 font-inter mt-10 mb-5 lg:mt-20 lg:mb-8">
         <div className=" basis-[100%] lg:basis-[66%] relative ">
-          {currentArticles.map((article) => (
-            <Article
-              key={article.id}
-              id={article.id}
-              title={article.title}
-              description={article.description}
-              img={article.img}
-              createdAt={article.createdAt}
-              author={article.author}
-              profile={article.profile}
-            />
-          ))}
+          {articles
+            .slice(indexOfFirstArticle, indexOfLastArticle)
+            .map((article) => (
+              <Article
+                key={article.id}
+                id={article.id}
+                title={article.title}
+                description={article.description}
+                img={article.img}
+                createdAt={article.createdAt}
+                author={article.author}
+                profile={article.profile}
+              />
+            ))}
         </div>
-        <div className="w-auto">
-          {currentArticles.length / articlesPerPage > 1 && (
+        <div className="w-full lg:hidden">
+          {articles.length / articlesPerPage > 1 && (
             <Pagination
               postPerPage={articlesPerPage}
-              totalPosts={currentArticles.length}
+              totalPosts={articles.length}
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
             />
           )}
         </div>
+        <RecipeList title="tasty recipes" recipes={recipes} banner />
       </section>
+      <div className="w-full hidden lg:block">
+        {articles.length / articlesPerPage > 1 && (
+          <Pagination
+            postPerPage={articlesPerPage}
+            totalPosts={articles.length}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+        )}
+      </div>
+      <Subscribe />
     </Container>
   );
 }
 
-export default Blog;
+export default BlogPage;
