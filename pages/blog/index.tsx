@@ -28,7 +28,7 @@ function BlogPage() {
   return (
     <Container className="mt-16 mb-32">
       <div className="mb-14">
-        <Title className=" mb-[24px]">Blog & Article</Title>
+        <Title className=" xl:text-6xl mb-[24px]">Blog & Article</Title>
         <Subtitle>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore
