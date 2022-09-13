@@ -27,7 +27,7 @@ function RecipeList({ title, recipes, banner }: Props) {
                 className="rounded-[20px] "
               />
             </div>
-            <div className="flex flex-col justify-around max-w-[60%]">
+            <div className="flex flex-col justify-around min-w-[60%] max-w-[60%]">
               <h6 className="font-semibold text-base line-clamp-2">
                 {recipe.title}
               </h6>

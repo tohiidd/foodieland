@@ -75,7 +75,7 @@ function SliderItem({
               </span>
             </div>
           </div>
-          <Link href={`recipe/${id}`}>
+          <Link href={`recipes/${id}`}>
             <a>
               <div className="bg-black text-white lg:hover:pr-10 transition-all rounded-2xl h-full px-3 lg:px-6 text-xs lg:text-sm flex items-center cursor-pointer ">
                 <span className="font-semibold ">View Recipes</span>

@@ -164,7 +164,9 @@ function ContactPage() {
       </div>
       <Subscribe />
       <div className="mt-16 md:mt-32">
-        <Title className="mb-16">you may like these recipes</Title>
+        <Title className="mb-16 capitalize">
+          you may like these recipes too
+        </Title>
         <Recipes len={4} />
       </div>
     </Container>
