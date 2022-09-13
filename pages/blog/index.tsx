@@ -8,7 +8,7 @@ import Container from "../../components/UI/Container";
 import Subtitle from "../../components/UI/Subtitle";
 import Title from "../../components/UI/Title";
 import { articleData } from "../../services/data/article";
-import { recipes } from "../../services/data/recipeData";
+import { recipes } from "../../services/data/recipe";
 
 function BlogPage() {
   const [articles, setArticles] = useState(articleData);

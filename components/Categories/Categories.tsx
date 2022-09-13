@@ -1,4 +1,4 @@
-import { categoriesData } from "../../services/data/categoriesData";
+import { categoriesData } from "../../services/data";
 import Container from "../UI/Container";
 import Category from "./Category";
 

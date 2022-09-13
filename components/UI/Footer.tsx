@@ -1,23 +1,29 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { icons } from "../../services/utils/icons";
 
 const Footer = () => {
+  const { pathname } = useRouter();
   const menu = [
     {
-      name: "Recipes",
+      name: "home",
+      to: "/",
+    },
+    {
+      name: "recipes",
       to: "/recipes",
     },
     {
-      name: "Blog",
+      name: "blog",
       to: "/blog",
     },
     {
-      name: "Contact",
+      name: "contact",
       to: "/contact",
     },
     {
-      name: "About Us",
-      to: "/aboutUs",
+      name: "about us",
+      to: "/about",
     },
   ];
 
@@ -35,15 +41,17 @@ const Footer = () => {
           </p>
         </div>
         <ul className="flex flex-row justify-center items-center font-medium font-inter sm:right-[120px]">
-          {menu.map(({ name, to }, index) => {
-            return (
-              <Link key={index} href={`${to}`}>
-                <a className="flex text-center text-xs sm:text-sm md:text-base lg:w-[80px] lg:ml-[10px] lg:py-[0px]  ml-[0px]  py-[20px]   w-[250px] justify-center hover:text-blue-500 transition-all ">
-                  {name}
-                </a>
-              </Link>
-            );
-          })}
+          {menu
+            .filter((item) => pathname !== item.to)
+            .map(({ name, to }, index) => {
+              return (
+                <Link key={index} href={`${to}`}>
+                  <a className="flex text-center text-xs sm:text-sm md:text-base capitalize lg:w-[80px] lg:ml-[10px] lg:py-[0px]  ml-[0px]  py-[20px]   w-[250px] justify-center hover:text-blue-500 transition-all ">
+                    {name}
+                  </a>
+                </Link>
+              );
+            })}
         </ul>
       </div>
       <div className="flex md:flex-row flex-col md:mb-[10px] h-[150px] justify-around  items-center border-t-[1px] border-gray-300">

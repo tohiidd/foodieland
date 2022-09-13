@@ -6,8 +6,8 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import Subscribe from "../../components/Subscribe/Subscribe";
 import Container from "../../components/UI/Container";
 import Title from "../../components/UI/Title";
-import { categoriesData } from "../../services/data/categoriesData";
-import { recipes as recipeList } from "../../services/data/recipeData";
+import { categoriesData } from "../../services/data";
+import { recipes as recipeList } from "../../services/data/recipe";
 
 function RecipesPage() {
   const [recipes, setRecipes] = useState(recipeList);

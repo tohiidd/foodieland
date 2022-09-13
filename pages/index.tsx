@@ -3,14 +3,15 @@ import Cooker from "../components/Cooker/Cooker";
 import Instagram from "../components/Instagram/Instagram";
 import BlueRecipe from "../components/Recipe/BlueRecipe";
 import Recipe from "../components/Recipe/Recipe";
+import Recipes from "../components/Recipe/Recipes";
 import HeaderSlider from "../components/Slider/HeaderSlider";
 import Subscribe from "../components/Subscribe/Subscribe";
 import Button from "../components/UI/Button";
 import Container from "../components/UI/Container";
 import Subtitle from "../components/UI/Subtitle";
 import Title from "../components/UI/Title";
-import { instagramItems } from "../services/data/instagramData";
-import { recipes } from "../services/data/recipeData";
+import { instagramItems } from "../services/data";
+import { recipes } from "../services/data/recipe";
 import { icons } from "../services/utils/icons";
 
 function HomePage() {
@@ -80,20 +81,7 @@ function HomePage() {
             tempor incididunt ut labore et dolore magna aliqut enim ad minim
           </Subtitle>
         </div>
-        <div className="flex gap-4 sm:gap-6 justify-center mx-auto xl:justify-between items-center sm:w-full flex-wrap">
-          {recipes
-            .slice(8, 16)
-            .map(({ img, title, category, id, cookTime }) => (
-              <Recipe
-                key={id}
-                id={id}
-                img={img}
-                title={title}
-                category={category}
-                cookTime={cookTime}
-              />
-            ))}
-        </div>
+        <Recipes len={8} />
       </Container>
       <Subscribe />
     </section>

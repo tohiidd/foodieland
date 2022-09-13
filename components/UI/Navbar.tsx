@@ -22,7 +22,7 @@ const menu = [
   },
   {
     name: "About Us",
-    to: "/about-us",
+    to: "/about",
   },
 ];
 

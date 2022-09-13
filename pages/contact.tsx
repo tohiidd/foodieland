@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FormEvent, useRef, useState } from "react";
+import Recipes from "../components/Recipe/Recipes";
 import Subscribe from "../components/Subscribe/Subscribe";
 import Button from "../components/UI/Button";
 import Container from "../components/UI/Container";
@@ -43,10 +44,10 @@ function ContactPage() {
     "border p-5 rounded-2xl h-full text-sm mb-6 text-black/60 border-red-600 bg-red-300/10";
   return (
     <Container>
-      <div className="flex justify-center lg:grid lg:grid-cols-3 w-full my-20">
+      <div className="flex justify-center lg:grid lg:grid-cols-3 w-full my-14  md:my-20">
         <Title className="xl:text-6xl col-start-2">Contact us</Title>
       </div>
-      <div className="flex flex-col lg:grid lg:grid-cols-3 mb-44">
+      <div className="flex flex-col lg:grid lg:grid-cols-3 mb-16 lg:mb-36">
         <div className="w-1/2 mb-4 mx-auto lg:w-full">
           <Image
             src="https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/cooker%2FCook-contact.png?alt=media&token=6d41b736-1b6c-4929-9b2e-fd6319ebfa2b"
@@ -162,6 +163,10 @@ function ContactPage() {
         </form>
       </div>
       <Subscribe />
+      <div className="mt-16 md:mt-32">
+        <Title className="mb-16">you may like these recipes</Title>
+        <Recipes len={4} />
+      </div>
     </Container>
   );
 }

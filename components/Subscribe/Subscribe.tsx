@@ -6,7 +6,7 @@ import Title from "../UI/Title";
 
 function Subscribe() {
   return (
-    <Container className="mt-20 sm:mt-30">
+    <Container className="mt-16 sm:mt-30">
       <div className=" w-full  mx-auto overflow-hidden rounded-[60px] text-center bg-[#E7F9FD] my-10">
         <div className="text-black flex flex-col items-center">
           <div className="w-11/12 sm:w-[589px] sm:tracking-[-0.04em] mb-3 ">
