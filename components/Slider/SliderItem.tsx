@@ -12,10 +12,10 @@ function SliderItem({
   category,
   chef,
   chefImg,
-  date,
+  createdAt,
   cookTime,
 }: IRecipe) {
-  const readableDate = getDate(date);
+  const readableDate = getDate(createdAt);
 
   return (
     <div className="carousel-item flex rounded-3xl overflow-hidden font-inter ">

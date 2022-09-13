@@ -15,7 +15,7 @@ function BlueRecipe({ title, img, category, id }: Props) {
       className="  basis-full sm:max-w-[400px] sm:basis-[48%] md:basis-[45%] lg:basis-[40%] xl:basis-[30%] 2xl:basis-[28%] flex flex-col justify-start items-center
     bg-gradient-to-b from-white to-blue-50 rounded-3xl p-[16px] font-inter relative"
     >
-      <Link href={`/recipe/${id}`}>
+      <Link href={`/recipes/${id}`}>
         <div className="w-[100%] h-[250px] xs:h-[340px] sm:w-full sm:h-[220px] cursor-pointer  md:h-[240px] lg:h-[260px] hover:scale-105 transition-all relative mb-6">
           <Image
             className="rounded-3xl "
@@ -34,7 +34,7 @@ function BlueRecipe({ title, img, category, id }: Props) {
           {like ? icons.whiteHeat() : icons.redHeat()}
         </span>
       </div>
-      <Link href={`/recipe/${id}`}>
+      <Link href={`/recipes/${id}`}>
         <a className="font-semibold text-xl md:text-2xl mb-6 w-full">{title}</a>
       </Link>
       <div className="flex justify-start w-full">

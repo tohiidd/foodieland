@@ -12,7 +12,7 @@ export const recipes = [
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/videos%2Ffood-1.mkv?alt=media&token=ebaa69bb-c79a-4d97-9871-70536b00f281",
     prepTime: "30 Minutes",
     cookTime: "15 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -38,7 +38,7 @@ export const recipes = [
 
     prepTime: "20 Minutes",
     cookTime: "10 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -64,7 +64,7 @@ export const recipes = [
 
     prepTime: "20 Minutes",
     cookTime: "10 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -90,7 +90,7 @@ export const recipes = [
 
     prepTime: "10 Minutes",
     cookTime: "5 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -116,7 +116,7 @@ export const recipes = [
 
     prepTime: "30 Minutes",
     cookTime: "20 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -142,7 +142,7 @@ export const recipes = [
 
     prepTime: "40 Minutes",
     cookTime: "25 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -168,7 +168,7 @@ export const recipes = [
 
     prepTime: "40 Minutes",
     cookTime: "25 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -194,7 +194,7 @@ export const recipes = [
 
     prepTime: "35 Minutes",
     cookTime: "25 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -220,7 +220,7 @@ export const recipes = [
 
     prepTime: "30 Minutes",
     cookTime: "10 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -246,7 +246,7 @@ export const recipes = [
 
     prepTime: "12 Minutes",
     cookTime: "10 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -272,7 +272,7 @@ export const recipes = [
 
     prepTime: "22 Minutes",
     cookTime: "10 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -298,7 +298,7 @@ export const recipes = [
 
     prepTime: "52 Minutes",
     cookTime: "40 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -324,7 +324,7 @@ export const recipes = [
 
     prepTime: "42 Minutes",
     cookTime: "38 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -350,7 +350,7 @@ export const recipes = [
 
     prepTime: "42 Minutes",
     cookTime: "38 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -376,7 +376,7 @@ export const recipes = [
 
     prepTime: "36 Minutes",
     cookTime: "28 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -402,7 +402,7 @@ export const recipes = [
 
     prepTime: "15 Minutes",
     cookTime: "10 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -428,7 +428,7 @@ export const recipes = [
 
     prepTime: "25 Minutes",
     cookTime: "20 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -454,7 +454,7 @@ export const recipes = [
 
     prepTime: "15 Minutes",
     cookTime: "10 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -480,7 +480,7 @@ export const recipes = [
 
     prepTime: "21 Minutes",
     cookTime: "17 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -506,7 +506,7 @@ export const recipes = [
 
     prepTime: "15 Minutes",
     cookTime: "10 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -532,7 +532,7 @@ export const recipes = [
 
     prepTime: "24 Minutes",
     cookTime: "18 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -558,7 +558,7 @@ export const recipes = [
 
     prepTime: "24 Minutes",
     cookTime: "18 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -584,7 +584,7 @@ export const recipes = [
 
     prepTime: "14 Minutes",
     cookTime: "8 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -610,7 +610,7 @@ export const recipes = [
 
     prepTime: "20 Minutes",
     cookTime: "10 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -637,7 +637,7 @@ export const recipes = [
 
     prepTime: "30 Minutes",
     cookTime: "25 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -664,7 +664,7 @@ export const recipes = [
 
     prepTime: "20 Minutes",
     cookTime: "20 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -691,7 +691,7 @@ export const recipes = [
 
     prepTime: "20 Minutes",
     cookTime: "20 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -718,7 +718,7 @@ export const recipes = [
 
     prepTime: "30 Minutes",
     cookTime: "20 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {
@@ -745,7 +745,7 @@ export const recipes = [
 
     prepTime: "40 Minutes",
     cookTime: "35 minutes",
-    date: "2022-06-10",
+    createdAt: "2022-06-10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     nutrition: {

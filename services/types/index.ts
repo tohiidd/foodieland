@@ -16,7 +16,7 @@ export interface IRecipe {
   video?: string;
   prepTime?: string;
   cookTime: string;
-  date: string;
+  createdAt: string;
   description: string;
   nutrition?: any;
   likes?: string;

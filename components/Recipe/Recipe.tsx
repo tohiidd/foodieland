@@ -15,7 +15,7 @@ function Recipe({ img, title, category, cookTime, id }: Props) {
   const [like, setLike] = useState(true);
   return (
     <div className="flex flex-col basis-[85%] xs:basis-[46%] lg:basis-[30%] xl:basis-[23%] h-[320px] pb-8  rounded-3xl relative">
-      <Link href={`/recipe/${id}`}>
+      <Link href={`/recipes/${id}`}>
         <div className="h-[240px] xs:h-[200px] sm:h-[230px] cursor-pointer hover:scale-105 transition-all rounded-3xl w-full relative">
           <Image
             src={img}
@@ -33,7 +33,7 @@ function Recipe({ img, title, category, cookTime, id }: Props) {
           {like ? icons.whiteHeat() : icons.redHeat()}
         </span>
       </div>
-      <Link href={`/recipe/${id}`}>
+      <Link href={`/recipes/${id}`}>
         <div>
           <h2 className="cursor-pointer text-lg font-semibold mt-1 tracking-[-0.04em] leading-[26px] text-black">
             {title}

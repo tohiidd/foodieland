@@ -37,7 +37,7 @@ function HeaderSlider() {
               banner={recipe.banner}
               chef={recipe.chef}
               chefImg={recipe.chefImg}
-              date={recipe.date}
+              createdAt={recipe.createdAt}
               description={recipe.description}
               cookTime={recipe.cookTime}
             />
