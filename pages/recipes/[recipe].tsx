@@ -7,8 +7,8 @@ import RecipeDetails from "../../components/RecipeDetails/RecipeDetails";
 import Subscribe from "../../components/Subscribe/Subscribe";
 import Container from "../../components/UI/Container";
 import Title from "../../components/UI/Title";
-import { directionsData } from "../../services/data";
-import { recipes } from "../../services/data/recipe";
+import { directionsData } from "../../data";
+import { recipes } from "../../data/recipe";
 
 function RecipePage() {
   const router = useRouter();
@@ -26,27 +26,16 @@ function RecipePage() {
             </div>
             <div>
               {directionsData.map((dir, index) => (
-                <Direction
-                  key={dir.id}
-                  title={dir.title}
-                  description={dir.description}
-                  number={index}
-                />
+                <Direction key={dir.id} title={dir.title} description={dir.description} number={index} />
               ))}
             </div>
           </div>
         </div>
-        <RecipeList
-          title="other recipes"
-          recipes={recipes.slice(9, 12)}
-          banner
-        />
+        <RecipeList title="other recipes" recipes={recipes.slice(9, 12)} banner />
       </div>
       <Subscribe />
       <div className="mt-16 md:mt-32">
-        <Title className="mb-16 capitalize">
-          you may like these recipes too
-        </Title>
+        <Title className="mb-16 capitalize">you may like these recipes too</Title>
         <Recipes len={4} />
       </div>
     </Container>

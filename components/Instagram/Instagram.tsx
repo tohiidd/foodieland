@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { icons } from "../../services/utils/icons";
+import { icons } from "../../utils/icons";
 
 interface Props {
   imageUrl: string;
@@ -20,9 +20,7 @@ function Instagram({ imageUrl, caption, date }: Props) {
             />
           </div>
           <div className="flex flex-col ml-2">
-            <span className=" font-semibold text-[8px] sm:text-[10px]">
-              Foodieland
-            </span>
+            <span className=" font-semibold text-[8px] sm:text-[10px]">Foodieland</span>
             <span className="text-[8px]">tokyo,japan</span>
           </div>
         </div>
@@ -31,13 +29,7 @@ function Instagram({ imageUrl, caption, date }: Props) {
         </div>
       </div>
       <div>
-        <Image
-          src={imageUrl}
-          alt="instagram-food"
-          width={500}
-          height={500}
-          objectFit="cover"
-        />
+        <Image src={imageUrl} alt="instagram-food" width={500} height={500} objectFit="cover" />
       </div>
       <div className="flex items-center py-2 px-2 relative">
         <a href="" className="mr-2">

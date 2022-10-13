@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { icons } from "../../services/utils/icons";
+import { icons } from "../../utils/icons";
 
 const Footer = () => {
   const { pathname } = useRouter();
@@ -60,15 +60,9 @@ const Footer = () => {
           <span className="text-red-300">Webflow</span>
         </p>
         <div className="flex items-center justify-center md:flex-row text-[19.36px] sm:mb-[0px] mb-[40px]">
-          <span className="flex justify-center header-icon cursor-pointer">
-            {icons.instagram()}
-          </span>
-          <span className="flex justify-center ml-[40px] header-icon cursor-pointer">
-            {icons.twitter()}
-          </span>
-          <span className="flex justify-center ml-[40px] header-icon cursor-pointer">
-            {icons.facebook()}
-          </span>
+          <span className="flex justify-center header-icon cursor-pointer">{icons.instagram()}</span>
+          <span className="flex justify-center ml-[40px] header-icon cursor-pointer">{icons.twitter()}</span>
+          <span className="flex justify-center ml-[40px] header-icon cursor-pointer">{icons.facebook()}</span>
         </div>
       </div>
     </div>

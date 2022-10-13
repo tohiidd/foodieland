@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { icons } from "../../services/utils/icons";
+import { icons } from "../../utils/icons";
 
 function Direction({ title, description, number }: any) {
   const [checked, setChecked] = useState(false);
@@ -14,11 +14,7 @@ function Direction({ title, description, number }: any) {
         />
         <label htmlFor="111" className="flex ">
           <span className="w-5 h-5 md:w-6 md:h-6 rounded-[50%] border-2 border-solid border-gray-400 "></span>
-          {checked && (
-            <span className=" child:w-5 md:child:w-6 absolute cursor-pointer">
-              {icons.checked()}
-            </span>
-          )}
+          {checked && <span className=" child:w-5 md:child:w-6 absolute cursor-pointer">{icons.checked()}</span>}
         </label>
       </div>
       <div>
@@ -26,9 +22,7 @@ function Direction({ title, description, number }: any) {
           <span>{number + 1}.</span>
           <span>{title}</span>
         </h2>
-        <p className="text-secondary text-justify text-sm md:text-base">
-          {description}
-        </p>
+        <p className="text-secondary text-justify text-sm md:text-base">{description}</p>
       </div>
     </div>
   );

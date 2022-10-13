@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { icons } from "../../services/utils/icons";
+import { icons } from "../../utils/icons";
 import { useState } from "react";
 interface Props {
   title: string;
@@ -17,20 +17,11 @@ function BlueRecipe({ title, img, category, id }: Props) {
     >
       <Link href={`/recipes/${id}`}>
         <div className="w-[100%] h-[250px] xs:h-[340px] sm:w-full sm:h-[220px] cursor-pointer  md:h-[240px] lg:h-[260px] hover:scale-105 transition-all relative mb-6">
-          <Image
-            className="rounded-3xl "
-            src={img}
-            alt={title}
-            layout="fill"
-            objectFit="cover"
-          />
+          <Image className="rounded-3xl " src={img} alt={title} layout="fill" objectFit="cover" />
         </div>
       </Link>
       <div className="w-[48px] h-[48px] bg-white rounded-full flex justify-center items-center absolute top-[32px] right-[36px]">
-        <span
-          onClick={() => setLike((prev) => !prev)}
-          className="w-[20.25px] h-[18px]"
-        >
+        <span onClick={() => setLike((prev) => !prev)} className="w-[20.25px] h-[18px]">
           {like ? icons.whiteHeat() : icons.redHeat()}
         </span>
       </div>

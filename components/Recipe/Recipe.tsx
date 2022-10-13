@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { icons } from "../../services/utils/icons";
+import { icons } from "../../utils/icons";
 
 interface Props {
   title: string;
@@ -17,21 +17,14 @@ function Recipe({ img, title, category, cookTime, id }: Props) {
     <div className="flex flex-col basis-[85%] xs:basis-[46%] lg:basis-[30%] xl:basis-[23%] h-[320px] pb-8  rounded-3xl relative">
       <Link href={`/recipes/${id}`}>
         <div className="h-[240px] xs:h-[200px] sm:h-[230px] cursor-pointer hover:scale-105 transition-all rounded-3xl w-full relative">
-          <Image
-            src={img}
-            alt="product"
-            layout="fill"
-            className=" block  rounded-3xl object-cover"
-          />
+          <Image src={img} alt="product" layout="fill" className=" block  rounded-3xl object-cover" />
         </div>
       </Link>
       <div
         onClick={() => setLike((prev) => !prev)}
         className="w-[48px] h-[48px] cursor-pointer bg-white rounded-full flex justify-center items-center absolute top-[12px] right-[16px] "
       >
-        <span className="w-[20.25px] h-[18px] inline-block ">
-          {like ? icons.whiteHeat() : icons.redHeat()}
-        </span>
+        <span className="w-[20.25px] h-[18px] inline-block ">{like ? icons.whiteHeat() : icons.redHeat()}</span>
       </div>
       <Link href={`/recipes/${id}`}>
         <div>

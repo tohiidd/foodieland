@@ -1,20 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IRecipe } from "../../services/types";
-import { getDate } from "../../services/utils/getDate.";
-import { icons } from "../../services/utils/icons";
+import { IRecipe } from "../../types";
+import { getDate } from "../../utils/getDate.";
+import { icons } from "../../utils/icons";
 
-function SliderItem({
-  title,
-  banner,
-  description,
-  id,
-  category,
-  chef,
-  chefImg,
-  createdAt,
-  cookTime,
-}: IRecipe) {
+function SliderItem({ title, banner, description, id, category, chef, chefImg, createdAt, cookTime }: IRecipe) {
   const readableDate = getDate(createdAt);
 
   return (
@@ -28,14 +18,10 @@ function SliderItem({
             alt="hot-recipes"
             className="inline-block"
           />
-          <span className="font-bold text-xs lg:text-sm ml-2 ">
-            Hot Recipes
-          </span>
+          <span className="font-bold text-xs lg:text-sm ml-2 ">Hot Recipes</span>
         </div>
         <div className="mt-4 mb-4 lg:mt-6 lg:mb-6 sm:h-[80px] md:h-[96px] xl:h-[120px]">
-          <h2 className=" text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold line-clamp-2">
-            {title}
-          </h2>
+          <h2 className=" text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold line-clamp-2">{title}</h2>
         </div>
         <div className="text-secondary text-xs lg:text-sm  line-clamp-3 ">
           <p>{description} </p>
@@ -67,12 +53,8 @@ function SliderItem({
               />
             </div>
             <div className="ml-2">
-              <span className="font-bold block text-sm lg:text-base">
-                {chef}
-              </span>
-              <span className="carousel-gray-text-color text-xs lg:text-sm font-medium">
-                {readableDate}
-              </span>
+              <span className="font-bold block text-sm lg:text-base">{chef}</span>
+              <span className="carousel-gray-text-color text-xs lg:text-sm font-medium">{readableDate}</span>
             </div>
           </div>
           <Link href={`recipes/${id}`}>

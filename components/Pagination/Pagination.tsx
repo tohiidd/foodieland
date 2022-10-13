@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { icons } from "../../services/utils/icons";
+import { icons } from "../../utils/icons";
 // import "./pagination.css";
 interface Props {
   postPerPage: number;
@@ -8,12 +8,7 @@ interface Props {
   setCurrentPage: Dispatch<SetStateAction<number>>;
 }
 
-function Pagination({
-  postPerPage,
-  totalPosts,
-  currentPage,
-  setCurrentPage,
-}: Props) {
+function Pagination({ postPerPage, totalPosts, currentPage, setCurrentPage }: Props) {
   const pageNumber: number[] = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / postPerPage); i++) {
@@ -39,8 +34,7 @@ function Pagination({
             onClick={() => setCurrentPage(number)}
             className={` w-10 flex justify-center items-center mr-2    border-gray-200 border-2 rounded-md cursor-pointer 
             hover:bg-gray-100 transition-all ${
-              pageNumber[index] == currentPage &&
-              "bg-black text-white border-0 hover:bg-black"
+              pageNumber[index] == currentPage && "bg-black text-white border-0 hover:bg-black"
             }`}
           >
             {number}

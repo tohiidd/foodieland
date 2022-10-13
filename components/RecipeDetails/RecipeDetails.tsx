@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { IRecipe } from "../../services/types";
-import { getDate } from "../../services/utils/getDate.";
-import { icons } from "../../services/utils/icons";
+import { IRecipe } from "../../types";
+import { getDate } from "../../utils/getDate.";
+import { icons } from "../../utils/icons";
 import Title from "../UI/Title";
 import NutritionInfo from "./NutritionInfo";
 
@@ -9,18 +9,7 @@ interface Props {
   recipe: IRecipe;
 }
 function RecipeDetails({ recipe }: Props) {
-  const {
-    title,
-    video,
-    description,
-    cookTime,
-    prepTime,
-    nutrition,
-    chef,
-    createdAt,
-    category,
-    chefImg,
-  } = recipe;
+  const { title, video, description, cookTime, prepTime, nutrition, chef, createdAt, category, chefImg } = recipe;
   const readableDate = getDate(createdAt);
 
   return (
@@ -41,30 +30,22 @@ function RecipeDetails({ recipe }: Props) {
               />
             </div>
             <div className=" ml-2 ">
-              <span className="font-bold block text-xs md:text-sm xl:text-base">
-                {chef}
-              </span>
-              <span className=" text-[10px] xl:text-[12px]  font-medium">
-                {readableDate}
-              </span>
+              <span className="font-bold block text-xs md:text-sm xl:text-base">{chef}</span>
+              <span className=" text-[10px] xl:text-[12px]  font-medium">{readableDate}</span>
             </div>
           </div>
           <div className="basis-[44%] sm:basis-[23%] flex items-center sm:border-r border-gray-300 border-solid">
             <span>{icons.timer()}</span>
             <div className="ml-2">
               <span className="font-medium text-xs block">PREP TIME</span>
-              <span className="text-sm font-medium text-secondary ">
-                {prepTime}
-              </span>
+              <span className="text-sm font-medium text-secondary ">{prepTime}</span>
             </div>
           </div>
           <div className="basis-[44%] sm:basis-[23%] flex items-center border-r border-gray-300 border-solid pl-3 sm:pl-0">
             <span>{icons.timer()}</span>
             <div className="ml-2">
               <span className="font-medium text-xs block">COOK TIME</span>
-              <span className="text-sm font-medium text-secondary ">
-                {cookTime}
-              </span>
+              <span className="text-sm font-medium text-secondary ">{cookTime}</span>
             </div>
           </div>
           <div className="basis-[44%] sm:basis-[23%] flex items-center text-sm md:text-base">
@@ -74,14 +55,7 @@ function RecipeDetails({ recipe }: Props) {
           </div>
         </div>
         <div className="h-[350px] md:h-[450px] xl:h-[600px]">
-          <video
-            src={video}
-            autoPlay
-            muted
-            controls
-            loop
-            className="rounded-3xl h-full object-cover mx-auto"
-          />
+          <video src={video} autoPlay muted controls loop className="rounded-3xl h-full object-cover mx-auto" />
         </div>
       </div>
       <div className="basis-full lg:basis-[30%] flex flex-col justify-between">

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { IRecipe } from "../../services/types";
+import { IRecipe } from "../../types";
 
 interface Props {
   title: string;
@@ -10,9 +10,7 @@ function RecipeList({ title, recipes, banner }: Props) {
   return (
     <div className="basis-[100%] lg:basis-[33%]">
       <div className="mb-10">
-        <h2 className="font-semibold text-3xl md:text-4xl capitalize">
-          {title}
-        </h2>
+        <h2 className="font-semibold text-3xl md:text-4xl capitalize">{title}</h2>
       </div>
       <div>
         {recipes.slice(1, 4).map((recipe) => (
@@ -28,22 +26,14 @@ function RecipeList({ title, recipes, banner }: Props) {
               />
             </div>
             <div className="flex flex-col justify-around min-w-[60%] max-w-[60%]">
-              <h6 className="font-semibold text-base line-clamp-2">
-                {recipe.title}
-              </h6>
-              <span className="text-secondary font-normal text-sm">
-                {recipe.chef}
-              </span>
+              <h6 className="font-semibold text-base line-clamp-2">{recipe.title}</h6>
+              <span className="text-secondary font-normal text-sm">{recipe.chef}</span>
             </div>
           </div>
         ))}
       </div>
 
-      <div
-        className={`${
-          banner ? "  lg:block " : ""
-        }relative hidden bg-green-900 mt-20 bg-contain bg-no-repeat`}
-      >
+      <div className={`${banner ? "  lg:block " : ""}relative hidden bg-green-900 mt-20 bg-contain bg-no-repeat`}>
         <p className="font-lobster text-2xl text-white absolute top-3 left-1/2 -translate-x-[50%] w-4/5 xl:w-1/2 text-center">
           Don’t forget to eat healthy food
         </p>

@@ -10,9 +10,9 @@ import Button from "../components/UI/Button";
 import Container from "../components/UI/Container";
 import Subtitle from "../components/UI/Subtitle";
 import Title from "../components/UI/Title";
-import { instagramItems } from "../services/data";
-import { recipes } from "../services/data/recipe";
-import { icons } from "../services/utils/icons";
+import { instagramItems } from "../data";
+import { recipes } from "../data/recipe";
+import { icons } from "../utils/icons";
 
 function HomePage() {
   return (
@@ -23,19 +23,13 @@ function HomePage() {
         <div className="flex flex-col justify-center items-center">
           <Title className="mb-[24px] ">Simple and tasty recipes</Title>
           <Subtitle className="mb-[96px] sm:mb-[80px] ">
-            Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqut enim ad minim
+            Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqut enim ad minim
           </Subtitle>
         </div>
         <div className="flex flex-row flex-wrap justify-center gap-6 md:gap-10">
           {recipes.slice(0, 8).map(({ title, img, category, id }) => (
-            <BlueRecipe
-              key={id}
-              id={id}
-              title={title}
-              img={img}
-              category={category}
-            />
+            <BlueRecipe key={id} id={id} title={title} img={img} category={category} />
           ))}
         </div>
       </Container>
@@ -44,23 +38,15 @@ function HomePage() {
       <section className="mt-20 sm:mt-40 bg-gradient-blueSky">
         <Container>
           <div className="text-center">
-            <Title className="mb-5 md:mb-10">
-              Check out @foodieland on Instagram
-            </Title>
+            <Title className="mb-5 md:mb-10">Check out @foodieland on Instagram</Title>
             <Subtitle className="md:w-4/5 mx-auto">
-              Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad
-              minim
+              Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqut enim ad minim
             </Subtitle>
           </div>
           <div className="flex flex-wrap gap-5 xl:gap-8 mt-10 md:mt-16 justify-center  mx-auto">
             {instagramItems.map(({ id, imageUrl, caption, date }) => (
-              <Instagram
-                key={id}
-                imageUrl={imageUrl}
-                caption={caption}
-                date={date}
-              />
+              <Instagram key={id} imageUrl={imageUrl} caption={caption} date={date} />
             ))}
           </div>
           <div className="mt-16 pb-20">
@@ -77,8 +63,8 @@ function HomePage() {
             Try this delicious recipe to make your day
           </Title>
           <Subtitle className="xl:text-left xl:w-[620px] lg:w-full w-[90%]">
-            Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqut enim ad minim
+            Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqut enim ad minim
           </Subtitle>
         </div>
         <Recipes len={8} />

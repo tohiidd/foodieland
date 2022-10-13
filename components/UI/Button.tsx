@@ -1,4 +1,4 @@
-import { IUi } from "../../services/types";
+import { IUi } from "../../types";
 
 function Button({ children, className }: IUi) {
   return (

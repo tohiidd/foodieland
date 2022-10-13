@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { icons } from "../../services/utils/icons";
+import { icons } from "../../utils/icons";
 
 interface Props {
   id: string;
@@ -19,11 +19,7 @@ function IngredientItem({ id, text }: Props) {
         />
         <label htmlFor={`${id}`} className="flex cursor-pointer">
           <span className="w-5 h-5 md:w-6 md:h-6 rounded-[50%] border-2 border-solid border-gray-400 "></span>
-          {checked && (
-            <span className=" child:w-5 md:child:w-6 absolute cursor-pointer">
-              {icons.checked()}
-            </span>
-          )}
+          {checked && <span className=" child:w-5 md:child:w-6 absolute cursor-pointer">{icons.checked()}</span>}
         </label>
       </div>
       <div className="relative">

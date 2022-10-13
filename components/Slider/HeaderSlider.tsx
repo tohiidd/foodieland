@@ -4,10 +4,10 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { recipes } from "../../services/data/recipe";
+import { recipes } from "../../data/recipe";
 import SliderItem from "./SliderItem";
 import Container from "../UI/Container";
-import { icons } from "../../services/utils/icons";
+import { icons } from "../../utils/icons";
 
 function HeaderSlider() {
   const sliderData = recipes.filter((recipe) => recipe.banner !== "");
