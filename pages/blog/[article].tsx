@@ -10,7 +10,6 @@ import Container from "../../components/UI/Container";
 
 function ArticlePage() {
   const router = useRouter();
-
   const article = articleData?.find((item) => item.id === router.query.article);
 
   const { id, title, description, img, createdAt, author, profile } = article!;
