@@ -18,7 +18,6 @@ const RecipeSchema = new mongoose.Schema(
     banner: { type: String, trim: true },
     video: { type: String, trim: true, require: true },
     chef: { type: String, trim: true, require: true },
-    chefImage: { type: String, trim: true },
     category: { type: String, trim: true, require: true },
     description: { type: String, trim: true, require: true },
     cookTime: { type: String, trim: true },
@@ -29,4 +28,4 @@ const RecipeSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Recipe", RecipeSchema);
+export default mongoose.models.Recipe || mongoose.model("Recipe", RecipeSchema);

@@ -4,11 +4,11 @@ import { icons } from "../../utils/icons";
 import { useState } from "react";
 interface Props {
   title: string;
-  img: string;
+  image: string;
   category: string;
   id: string;
 }
-function BlueRecipe({ title, img, category, id }: Props) {
+function BlueRecipe({ title, image, category, id }: Props) {
   const [like, setLike] = useState(true);
   return (
     <div
@@ -17,7 +17,7 @@ function BlueRecipe({ title, img, category, id }: Props) {
     >
       <Link href={`/recipes/${id}`}>
         <div className="w-[100%] h-[250px] xs:h-[340px] sm:w-full sm:h-[220px] cursor-pointer  md:h-[240px] lg:h-[260px] hover:scale-105 transition-all relative mb-6">
-          <Image className="rounded-3xl " src={img} alt={title} layout="fill" objectFit="cover" />
+          <Image className="rounded-3xl " src={image} alt={title} layout="fill" objectFit="cover" />
         </div>
       </Link>
       <div className="w-[48px] h-[48px] bg-white rounded-full flex justify-center items-center absolute top-[32px] right-[36px]">

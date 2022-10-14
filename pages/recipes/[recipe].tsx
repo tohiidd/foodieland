@@ -1,4 +1,7 @@
-import { useRouter } from "next/router";
+import dbConnect from "@/lib/dbConnect";
+import Recipe from "@/models/Recipe";
+import { IRecipe } from "@/types/index";
+import {  GetServerSidePropsContext } from "next";
 import RecipeList from "../../components/Recipe/RecipeList";
 import Recipes from "../../components/Recipe/Recipes";
 import Direction from "../../components/RecipeDetails/Direction";
@@ -10,13 +13,14 @@ import Title from "../../components/UI/Title";
 import { directionsData } from "../../data";
 import { recipes } from "../../data/recipe";
 
-function RecipePage() {
-  const router = useRouter();
-  const recipe = recipes?.find((recipe) => recipe.id === router.query.recipe);
+interface Props {
+  recipe: IRecipe;
+}
 
+function RecipePage({ recipe }: Props) {
   return (
     <Container className="mt-20 ">
-      <RecipeDetails recipe={recipe!} />
+      <RecipeDetails recipe={recipe} />
       <div className="flex flex-wrap lg:flex-nowrap gap-10 font-inter my-10 lg:my-20">
         <div className="basis-[100%] lg:basis-[66%]">
           <IngredientsList />
@@ -31,7 +35,7 @@ function RecipePage() {
             </div>
           </div>
         </div>
-        <RecipeList title="other recipes" recipes={recipes.slice(9, 12)} banner />
+        <RecipeList title="other recipes" banner />
       </div>
       <Subscribe />
       <div className="mt-16 md:mt-32">
@@ -40,6 +44,20 @@ function RecipePage() {
       </div>
     </Container>
   );
+}
+export async function getServerSideProps(context:GetServerSidePropsContext) {
+  const id = context?.params?.recipe;
+  await dbConnect();
+
+  const recipe = await Recipe.findById(id);
+  //   const recipe = doc.toObject();
+    recipe._id = recipe._id.toString();
+    recipe.nutrition._id = recipe.nutrition._id.toString();
+  // console.log(recipes);
+
+  return {
+    props: { recipe },
+  };
 }
 
 export default RecipePage;

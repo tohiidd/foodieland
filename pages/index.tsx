@@ -1,8 +1,8 @@
+import dbConnect from "@/lib/dbConnect";
 import Categories from "../components/Categories/Categories";
 import Cooker from "../components/Cooker/Cooker";
 import Instagram from "../components/Instagram/Instagram";
 import BlueRecipe from "../components/Recipe/BlueRecipe";
-import Recipe from "../components/Recipe/Recipe";
 import Recipes from "../components/Recipe/Recipes";
 import HeaderSlider from "../components/Slider/HeaderSlider";
 import Subscribe from "../components/Subscribe/Subscribe";
@@ -11,10 +11,17 @@ import Container from "../components/UI/Container";
 import Subtitle from "../components/UI/Subtitle";
 import Title from "../components/UI/Title";
 import { instagramItems } from "../data";
-import { recipes } from "../data/recipe";
 import { icons } from "../utils/icons";
+import Recipe from "../models/Recipe";
+import { IRecipe } from "../types";
 
-function HomePage() {
+interface Props {
+  recipes: IRecipe[];
+}
+
+function HomePage({ recipes }: Props) {
+  console.log(recipes);
+
   return (
     <section>
       <HeaderSlider />
@@ -28,8 +35,8 @@ function HomePage() {
           </Subtitle>
         </div>
         <div className="flex flex-row flex-wrap justify-center gap-6 md:gap-10">
-          {recipes.slice(0, 8).map(({ title, img, category, id }) => (
-            <BlueRecipe key={id} id={id} title={title} img={img} category={category} />
+          {recipes.slice(0, 8).map(({ title, image, category, _id }) => (
+            <BlueRecipe key={_id} id={_id} title={title} image={image} category={category} />
           ))}
         </div>
       </Container>
@@ -72,5 +79,18 @@ function HomePage() {
       <Subscribe />
     </section>
   );
+}
+export async function getServerSideProps() {
+  await dbConnect();
+
+  const recipes = await Recipe.find({})
+    .skip((1 - 1) * 12)
+    .sort({ _id: -1 })
+    .limit(12)
+    .lean();
+
+  return {
+    props: { recipes },
+  };
 }
 export default HomePage;

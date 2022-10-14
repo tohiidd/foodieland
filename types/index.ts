@@ -6,20 +6,20 @@ export interface IUi {
 }
 
 export interface IRecipe {
-  id: string;
+  _id: string;
   category: string;
   title: string;
   chef: string;
   chefImg: string;
-  img?: string;
-  banner: string;
-  video?: string;
-  prepTime?: string;
+  image: string;
+  banner?: string;
+  video: string;
+  prepTime: string;
   cookTime: string;
   createdAt: string;
   description: string;
-  nutrition?: any;
-  likes?: string;
+  nutrition: any;
+  likes: string;
 }
 export interface IArticle {
   id: string;

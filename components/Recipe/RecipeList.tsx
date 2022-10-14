@@ -1,12 +1,12 @@
+import { recipes } from "data/recipe";
 import Image from "next/image";
 import { IRecipe } from "../../types";
 
 interface Props {
   title: string;
-  recipes: IRecipe[];
   banner?: boolean;
 }
-function RecipeList({ title, recipes, banner }: Props) {
+function RecipeList({ title, banner }: Props) {
   return (
     <div className="basis-[100%] lg:basis-[33%]">
       <div className="mb-10">

@@ -4,7 +4,8 @@ import Recipe from "@/models/Recipe";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method, query: id } = req;
-  dbConnect();
+  await dbConnect();
+
   if (method === "GET") {
     try {
       const recipe = await Recipe.findById(id);
@@ -13,6 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       res.status(500).json(error);
     }
   }
+
   if (method === "PUT") {
     try {
       const recipe = await Recipe.findByIdAndUpdate(id, req.body, { new: true });
@@ -21,6 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       res.status(500).json(error);
     }
   }
+
   if (method === "DELETE") {
     try {
       const recipe = await Recipe.findByIdAndDelete(id);
