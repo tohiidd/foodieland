@@ -22,10 +22,10 @@ export interface IRecipe {
   likes: string;
 }
 export interface IArticle {
-  id: string;
+  _id: string;
   title: string;
   author: string;
-  img: string;
+  image: string;
   createdAt: string;
   description: string;
   profile: any;

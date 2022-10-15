@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -20,19 +16,13 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@/components/*":["components/*"],
-      "@/utils/*":["utils/*"],
-      "@/types/*":["types/*"],
-      "@/lib/*":["lib/*"],
-      "@/models/*":["models/*"],
+      "@/components/*": ["components/*"],
+      "@/utils/*": ["utils/*"],
+      "@/types/*": ["types/*"],
+      "@/services/*": ["services/*"],
+      "@/models/*": ["models/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-, "utils/icons.js"  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "utils/icons.js"],
+  "exclude": ["node_modules"]
 }

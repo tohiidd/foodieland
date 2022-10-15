@@ -1,7 +1,7 @@
-import dbConnect from "@/lib/dbConnect";
+import dbConnect from "services/dbConnect";
 import Recipe from "@/models/Recipe";
 import { IRecipe } from "@/types/index";
-import {  GetServerSidePropsContext } from "next";
+import { GetServerSidePropsContext } from "next";
 import RecipeList from "../../components/Recipe/RecipeList";
 import Recipes from "../../components/Recipe/Recipes";
 import Direction from "../../components/RecipeDetails/Direction";
@@ -11,7 +11,7 @@ import Subscribe from "../../components/Subscribe/Subscribe";
 import Container from "../../components/UI/Container";
 import Title from "../../components/UI/Title";
 import { directionsData } from "../../data";
-import { recipes } from "../../data/recipe";
+import { stringify } from "@/utils/stringify";
 
 interface Props {
   recipe: IRecipe;
@@ -45,18 +45,14 @@ function RecipePage({ recipe }: Props) {
     </Container>
   );
 }
-export async function getServerSideProps(context:GetServerSidePropsContext) {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
   const id = context?.params?.recipe;
   await dbConnect();
 
   const recipe = await Recipe.findById(id);
-  //   const recipe = doc.toObject();
-    recipe._id = recipe._id.toString();
-    recipe.nutrition._id = recipe.nutrition._id.toString();
-  // console.log(recipes);
 
   return {
-    props: { recipe },
+    props: { recipe: stringify(recipe) },
   };
 }
 

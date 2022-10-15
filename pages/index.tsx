@@ -1,4 +1,4 @@
-import dbConnect from "@/lib/dbConnect";
+import dbConnect from "services/dbConnect";
 import Categories from "../components/Categories/Categories";
 import Cooker from "../components/Cooker/Cooker";
 import Instagram from "../components/Instagram/Instagram";
@@ -14,6 +14,7 @@ import { instagramItems } from "../data";
 import { icons } from "../utils/icons";
 import Recipe from "../models/Recipe";
 import { IRecipe } from "../types";
+import { stringify } from "@/utils/stringify";
 
 interface Props {
   recipes: IRecipe[];
@@ -80,17 +81,17 @@ function HomePage({ recipes }: Props) {
     </section>
   );
 }
+export default HomePage;
+
 export async function getServerSideProps() {
   await dbConnect();
 
-  const recipes = await Recipe.find({})
+  const recipes = await Recipe.find()
     .skip((1 - 1) * 12)
     .sort({ _id: -1 })
-    .limit(12)
-    .lean();
+    .limit(12);
 
   return {
-    props: { recipes },
+    props: { recipes: stringify(recipes) },
   };
 }
-export default HomePage;

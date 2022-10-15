@@ -1,33 +1,24 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import dbConnect from "@/lib/dbConnect";
+import dbConnect from "services/dbConnect";
 import Recipe from "@/models/Recipe";
+import { addFilters } from "@/utils/addFilters";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method, query } = req;
   await dbConnect();
   if (method === "GET") {
-    let pageNumber = 1;
-    let nPerPage = 9;
-    if (typeof query?.limit === "string" && typeof query?.page === "string") {
-      pageNumber = parseInt(query?.page);
-      nPerPage = parseInt(query?.limit);
-    }
+    let pageNumber = parseInt(query?.page as string) || 1;
+    let nPerPage = parseInt(query?.limit as string) || 12;
 
-    let filters: any = {};
-    if (query?.category) {
-      filters.category = { $in: query.category };
-    }
-    if (query?.search) {
-      filters.title = {
-        $regex: new RegExp(".*" + query.search + ".*", "ig"),
-      };
-    }
-
+    let filters = addFilters(query);
     try {
       const recipes = await Recipe.find(filters)
         .skip((pageNumber - 1) * nPerPage)
         .limit(nPerPage);
-      res.status(200).json({ message: "recipes found successfully.", data: recipes });
+
+      const total = await Recipe.countDocuments(filters);
+
+      res.status(200).json({ message: "recipes found successfully.", data: recipes, total });
     } catch (error) {
       res.status(500).json(error);
     }

@@ -1,18 +1,22 @@
-import { useRouter } from "next/router";
+import { GetServerSidePropsContext } from "next";
 import Recipes from "../../components/Recipe/Recipes";
 import Subscribe from "../../components/Subscribe/Subscribe";
 import Title from "../../components/UI/Title";
 import { icons } from "../../utils/icons";
-import { articleData } from "../../data/article";
 import { getDate } from "../../utils/getDate.";
 import Image from "next/image";
 import Container from "../../components/UI/Container";
+import { IArticle } from "@/types/index";
+import dbConnect from "@/services/dbConnect";
+import Article from "@/models/Article";
+import { stringify } from "@/utils/stringify";
 
-function ArticlePage() {
-  const router = useRouter();
-  const article = articleData?.find((item) => item.id === router.query.article);
+interface Props {
+  article: IArticle;
+}
 
-  const { id, title, description, img, createdAt, author, profile } = article!;
+function ArticlePage({ article }: Props) {
+  const { _id, title, description, image, createdAt, author, profile } = article;
 
   const date = getDate(createdAt);
   return (
@@ -38,7 +42,7 @@ function ArticlePage() {
       <p className="text-center m-auto w-[80%] mb-[71px] text-secondary">{description}</p>
       <div className=" mb-[71px]  h-[300px] sm:h-[400px] md:h-[500px] xl:h-[600px] relative">
         <Image
-          src={img}
+          src={image}
           alt="article"
           width={300}
           height={200}
@@ -68,3 +72,16 @@ function ArticlePage() {
 }
 
 export default ArticlePage;
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const id = context?.params?.article;
+  await dbConnect();
+
+  const article = await Article.findById(id);
+
+  return {
+    props: {
+      article: stringify(article),
+    },
+  };
+}

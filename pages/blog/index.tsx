@@ -1,28 +1,45 @@
-import { ChangeEvent, useState } from "react";
-import Article from "../../components/Article/Article";
-import Pagination from "../../components/Pagination/Pagination";
-import RecipeList from "../../components/Recipe/RecipeList";
-import SearchBar from "../../components/SearchBar/SearchBar";
-import Subscribe from "../../components/Subscribe/Subscribe";
-import Container from "../../components/UI/Container";
-import Subtitle from "../../components/UI/Subtitle";
-import Title from "../../components/UI/Title";
-import { articleData } from "../../data/article";
-import { recipes } from "../../data/recipe";
+import { useState } from "react";
+import { GetServerSidePropsContext } from "next";
+import dbConnect from "@/services/dbConnect";
+import Article from "@/components/Article/Article";
+import Pagination from "@/components/Pagination/Pagination";
+import RecipeList from "@/components/Recipe/RecipeList";
+import SearchBar from "@/components/SearchBar/SearchBar";
+import Subscribe from "@/components/Subscribe/Subscribe";
+import Container from "@/components/UI/Container";
+import Subtitle from "@/components/UI/Subtitle";
+import Title from "@/components/UI/Title";
+import ArticleModel from "@/models/Article";
+import { IArticle } from "@/types/index";
+import { addFilters } from "@/utils/addFilters";
+import { useRouter } from "next/router";
+import { useQuery } from "react-query";
+import { getArticles } from "@/services/articlesApi";
+import { stringify } from "@/utils/stringify";
 
-function BlogPage() {
-  const [articles, setArticles] = useState(articleData);
+interface Props {
+  articlesList: IArticle[];
+  totalArticles: number;
+}
+
+function BlogPage({ articlesList, totalArticles }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [articlesPerPage] = useState(6);
+
+  const router = useRouter();
 
   const indexOfLastArticle = currentPage * articlesPerPage;
   const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
 
-  const searchHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    let keyword = event?.target.value;
-    let data = articleData.filter((item) => item.title.toLowerCase().includes(keyword.toLocaleLowerCase()));
-    setArticles(data);
-  };
+  let searchQuery = router.query.search as string;
+  let queries = searchQuery ? `search=${searchQuery}` : "";
+
+  const { data: articlesData } = useQuery("articles", () => getArticles(queries), {
+    initialData: { data: articlesList, total: totalArticles },
+  });
+  const articles = articlesData?.data ?? [];
+  const total = articlesData?.total ?? 0;
+
   return (
     <Container className="mt-16 mb-32">
       <div className="mb-14">
@@ -31,16 +48,16 @@ function BlogPage() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         </Subtitle>
       </div>
-      <SearchBar searchHandler={searchHandler} placeholder={"search articles, news..."} />
+      <SearchBar placeholder={"search articles, news..."} />
       <section className=" flex flex-wrap lg:flex-nowrap gap-10 font-inter mt-10 mb-5 lg:mt-20 lg:mb-8">
         <div className=" basis-[100%] lg:basis-[66%] relative ">
-          {articles.slice(indexOfFirstArticle, indexOfLastArticle).map((article) => (
+          {articles.slice(indexOfFirstArticle, indexOfLastArticle).map((article: IArticle) => (
             <Article
-              key={article.id}
-              id={article.id}
+              key={article._id}
+              _id={article._id}
               title={article.title}
               description={article.description}
-              img={article.img}
+              image={article.image}
               createdAt={article.createdAt}
               author={article.author}
               profile={article.profile}
@@ -57,7 +74,7 @@ function BlogPage() {
             />
           )}
         </div>
-        <RecipeList title="tasty recipes" recipes={recipes} banner />
+        <RecipeList title="tasty recipes" banner />
       </section>
       <div className="w-full hidden lg:block">
         {articles.length / articlesPerPage > 1 && (
@@ -75,3 +92,17 @@ function BlogPage() {
 }
 
 export default BlogPage;
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  await dbConnect();
+  let filters = addFilters(context.query);
+  const articlesList = await ArticleModel.find(filters);
+  const totalArticles = await ArticleModel.countDocuments(filters);
+
+  return {
+    props: {
+      articlesList: stringify(articlesList),
+      totalArticles,
+    },
+  };
+}

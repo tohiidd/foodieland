@@ -1,5 +1,6 @@
-import { recipes } from "data/recipe";
+import { getRecipes } from "@/services/recipesApi";
 import Image from "next/image";
+import { useQuery } from "react-query";
 import { IRecipe } from "../../types";
 
 interface Props {
@@ -7,17 +8,20 @@ interface Props {
   banner?: boolean;
 }
 function RecipeList({ title, banner }: Props) {
+  const { data: recipesData, isLoading } = useQuery("recipes", () => getRecipes());
+  const recipes = recipesData?.data ?? [];
+
   return (
     <div className="basis-[100%] lg:basis-[33%]">
       <div className="mb-10">
         <h2 className="font-semibold text-3xl md:text-4xl capitalize">{title}</h2>
       </div>
       <div>
-        {recipes.slice(1, 4).map((recipe) => (
-          <div key={recipe.id} className="flex gap-4 mb-6 cursor-pointer">
+        {recipes.slice(1, 4).map((recipe: IRecipe) => (
+          <div key={recipe._id} className="flex gap-4 mb-6 cursor-pointer">
             <div className="w-[180px] lg:w-[140px] xl:w-[180px]">
               <Image
-                src={recipe.img!}
+                src={recipe.image}
                 alt="recipe"
                 width={280}
                 height={220}

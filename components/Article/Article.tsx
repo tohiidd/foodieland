@@ -3,14 +3,14 @@ import Link from "next/link";
 import { IArticle } from "../../types";
 import { getDate } from "../../utils/getDate.";
 
-function Article({ id, img, title, description, author, profile, createdAt }: IArticle) {
+function Article({ _id, image, title, description, author, profile, createdAt }: IArticle) {
   const date = getDate(createdAt);
   return (
     <article className="flex flex-col sm:flex-row mb-8 gap-4  rounded-xl ">
       <div className=" basis-[35%] ">
-        <Link href={`/blog/${id}`}>
+        <Link href={`/blog/${_id}`}>
           <Image
-            src={img}
+            src={image}
             alt="food"
             width={300}
             height={200}
@@ -21,7 +21,7 @@ function Article({ id, img, title, description, author, profile, createdAt }: IA
       </div>
       <div className="basis-[65%] relative pb-12">
         <div className="text-center sm:text-left">
-          <Link href={`/blog/${id}`}>
+          <Link href={`/blog/${_id}`}>
             <h4 className="text-xl xl:text-2xl font-bold cursor-pointer">{title}</h4>
           </Link>
           <p className="text-secondary mt-3 sm:mt-2 text-xs xl:text-base article-description-paragraph">
