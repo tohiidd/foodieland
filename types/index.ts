@@ -28,5 +28,4 @@ export interface IArticle {
   image: string;
   createdAt: string;
   description: string;
-  profile: any;
 }

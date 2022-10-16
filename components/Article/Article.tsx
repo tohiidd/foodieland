@@ -3,7 +3,7 @@ import Link from "next/link";
 import { IArticle } from "../../types";
 import { getDate } from "../../utils/getDate.";
 
-function Article({ _id, image, title, description, author, profile, createdAt }: IArticle) {
+function Article({ _id, image, title, description, author, createdAt }: IArticle) {
   const date = getDate(createdAt);
   return (
     <article className="flex flex-col sm:flex-row mb-8 gap-4  rounded-xl ">
@@ -30,7 +30,7 @@ function Article({ _id, image, title, description, author, profile, createdAt }:
 
           <div className="flex items-center justify-center sm:justify-start mt-4 sm:mt-0 w-full absolute bottom-2">
             <div className="flex items-center   ">
-              <Image src={profile} alt="author of blog" width={30} height={30} className="w-8 h-8  rounded-[50%]" />
+              <Image src={image} alt="author of blog" width={30} height={30} className="w-8 h-8  rounded-[50%]" />
 
               <p className=" m-[2px] ml-2 font-semibold text-sm  ">{author}</p>
             </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GetServerSidePropsContext } from "next";
 import dbConnect from "@/services/dbConnect";
 import Article from "@/components/Article/Article";
@@ -13,7 +13,7 @@ import ArticleModel from "@/models/Article";
 import { IArticle } from "@/types/index";
 import { addFilters } from "@/utils/addFilters";
 import { useRouter } from "next/router";
-import { useQuery } from "react-query";
+import { useQuery, useQueryClient } from "react-query";
 import { getArticles } from "@/services/articlesApi";
 import { stringify } from "@/utils/stringify";
 
@@ -25,20 +25,27 @@ interface Props {
 function BlogPage({ articlesList, totalArticles }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [articlesPerPage] = useState(6);
+  const queryClient = useQueryClient();
 
   const router = useRouter();
 
-  const indexOfLastArticle = currentPage * articlesPerPage;
-  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
+  let queries = `page=${currentPage}&limit=${articlesPerPage}`;
 
   let searchQuery = router.query.search as string;
-  let queries = searchQuery ? `search=${searchQuery}` : "";
+  if (searchQuery) {
+    queries = `${queries}&search=${searchQuery}`;
+  }
 
   const { data: articlesData } = useQuery("articles", () => getArticles(queries), {
     initialData: { data: articlesList, total: totalArticles },
+    refetchOnMount: false,
   });
   const articles = articlesData?.data ?? [];
   const total = articlesData?.total ?? 0;
+
+  useEffect(() => {
+    queryClient.prefetchQuery("articles", () => getArticles(queries));
+  }, [router.query, queries, queryClient]);
 
   return (
     <Container className="mt-16 mb-32">
@@ -51,7 +58,7 @@ function BlogPage({ articlesList, totalArticles }: Props) {
       <SearchBar placeholder={"search articles, news..."} />
       <section className=" flex flex-wrap lg:flex-nowrap gap-10 font-inter mt-10 mb-5 lg:mt-20 lg:mb-8">
         <div className=" basis-[100%] lg:basis-[66%] relative ">
-          {articles.slice(indexOfFirstArticle, indexOfLastArticle).map((article: IArticle) => (
+          {articles.map((article: IArticle) => (
             <Article
               key={article._id}
               _id={article._id}
@@ -60,7 +67,6 @@ function BlogPage({ articlesList, totalArticles }: Props) {
               image={article.image}
               createdAt={article.createdAt}
               author={article.author}
-              profile={article.profile}
             />
           ))}
         </div>
@@ -77,10 +83,10 @@ function BlogPage({ articlesList, totalArticles }: Props) {
         <RecipeList title="tasty recipes" banner />
       </section>
       <div className="w-full hidden lg:block">
-        {articles.length / articlesPerPage > 1 && (
+        {total / articlesPerPage > 1 && (
           <Pagination
             postPerPage={articlesPerPage}
-            totalPosts={articles.length}
+            totalPosts={total}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
           />

@@ -17,7 +17,7 @@ function RecipeList({ title, banner }: Props) {
         <h2 className="font-semibold text-3xl md:text-4xl capitalize">{title}</h2>
       </div>
       <div>
-        {recipes.slice(1, 4).map((recipe: IRecipe) => (
+        {recipes.slice(0, 4).map((recipe: IRecipe) => (
           <div key={recipe._id} className="flex gap-4 mb-6 cursor-pointer">
             <div className="w-[180px] lg:w-[140px] xl:w-[180px]">
               <Image

@@ -40,7 +40,7 @@ function RecipesPage({ recipesList, totalRecipes }: Props) {
     queries = `${queries}&search=${searchQuery}`;
   }
 
-  const { data: recipesData } = useQuery(["recipes"], () => getRecipes(queries), {
+  const { data: recipesData } = useQuery("recipes", () => getRecipes(queries), {
     initialData: { data: recipesList, total: totalRecipes },
     refetchOnMount: false,
   });
@@ -71,7 +71,7 @@ function RecipesPage({ recipesList, totalRecipes }: Props) {
     setCurrentPage(1);
   };
   useEffect(() => {
-    queryClient.prefetchQuery(["recipes"], () => getRecipes(queries));
+    queryClient.prefetchQuery("recipes", () => getRecipes(queries));
   }, [router.query, queries, queryClient]);
 
   return (

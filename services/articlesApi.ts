@@ -5,9 +5,9 @@ const articlesApi = axios.create({
   baseURL: "http://localhost:3000/api/articles",
 });
 
-export const getArticles = async (query: string) => {
+export const getArticles = async (query: string = "") => {
   const response = await articlesApi.get(`?${query}`);
-  return response?.data?.data;
+  return response?.data;
 };
 
 export const getArticle = async (id: string) => {

@@ -18,6 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         .skip((pageNumber - 1) * nPerPage)
         .limit(nPerPage);
       const total = await Article.countDocuments(filters);
+
       res.status(200).json({ message: "articles found successfully.", data: articles, total });
     } catch (error) {
       res.status(500).json(error);
