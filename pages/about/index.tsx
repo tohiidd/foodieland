@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Subscribe from "../components/Subscribe/Subscribe";
-import Container from "../components/UI/Container";
-import Subtitle from "../components/UI/Subtitle";
-import Title from "../components/UI/Title";
-import { chefsData } from "../data";
+import Subscribe from "@/components/Subscribe/Subscribe";
+import Container from "@/components/UI/Container";
+import Subtitle from "@/components/UI/Subtitle";
+import Title from "@/components/UI/Title";
+import { chefsData } from "../../data";
 
 function AboutPage() {
   return (

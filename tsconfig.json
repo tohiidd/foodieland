@@ -23,6 +23,6 @@
       "@/models/*": ["models/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "utils/icons.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "utils/icons.ts"],
   "exclude": ["node_modules"]
 }

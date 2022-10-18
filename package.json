@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react-transition-group": "^4.4.5",
     "axios": "^1.1.2",
     "mongoose": "^6.6.5",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.6.0",
     "react-query": "^3.39.2",
+    "react-responsive": "^9.0.0",
+    "react-transition-group": "^4.4.5",
     "swiper": "^8.3.2"
   },
   "devDependencies": {
