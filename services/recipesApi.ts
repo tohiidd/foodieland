@@ -1,11 +1,17 @@
 import axios from "axios";
 import { IRecipe } from "@/types/index";
 
+interface GetRecipesResponse {
+  message: string;
+  data: IRecipe[];
+  total: number;
+}
+
 const recipesApi = axios.create({
   baseURL: "http://localhost:3000/api/recipes",
 });
 
-export const getRecipes = async (query: string = "") => {
+export const getRecipes = async (query: string = ""): Promise<GetRecipesResponse> => {
   const response = await recipesApi.get(`?${query}`);
   return response.data;
 };

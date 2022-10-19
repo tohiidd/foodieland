@@ -1,4 +1,4 @@
-import { categoriesData } from "../../data";
+import { categories } from "./data";
 import Container from "../UI/Container";
 import Category from "./Category";
 
@@ -17,8 +17,8 @@ function Categories() {
           </div>
         </div>
         <div className="flex justify-between gap-2 sm:gap-4 xl:gap-8 px-2  flex-wrap">
-          {categoriesData.map(({ id, name, imageUrl, bgColor }) => (
-            <Category key={id} id={id} name={name} imageUrl={imageUrl} bgColor={bgColor} />
+          {categories.map(({ id, name, image, bgColor }) => (
+            <Category key={id} id={id} name={name} image={image} bgColor={bgColor} />
           ))}
         </div>
       </div>

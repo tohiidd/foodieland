@@ -1,13 +1,22 @@
+import { useEffect, PropsWithChildren, useState } from "react";
 import Image from "next/image";
-import { PropsWithChildren, useState } from "react";
+import { useBreakpoint } from "hooks/useBreakpoints";
 import Aside from "../Panel/Aside/Aside";
 
 function PanelLayout({ children }: PropsWithChildren) {
-  const [asideOpen, setAsideOpen] = useState(true);
+  const [asideOpen, setAsideOpen] = useState(false);
+
+  const { isLg } = useBreakpoint("lg");
 
   const drawerToggler = () => {
     setAsideOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    if (isLg) {
+      setAsideOpen(true);
+    }
+  }, []);
 
   return (
     <section className="bg-[#f0f0fa] font-inter">

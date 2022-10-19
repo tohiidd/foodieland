@@ -53,8 +53,8 @@ function HomePage({ recipes }: Props) {
             </Subtitle>
           </div>
           <div className="flex flex-wrap gap-5 xl:gap-8 mt-10 md:mt-16 justify-center  mx-auto">
-            {instagramItems.map(({ id, imageUrl, caption, date }) => (
-              <Instagram key={id} imageUrl={imageUrl} caption={caption} date={date} />
+            {instagramItems.map(({ id, image, caption, date }) => (
+              <Instagram key={id} image={image} caption={caption} date={date} />
             ))}
           </div>
           <div className="mt-16 pb-20">

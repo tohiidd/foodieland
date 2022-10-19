@@ -2,11 +2,11 @@ import Image from "next/image";
 import { icons } from "../../utils/icons";
 
 interface Props {
-  imageUrl: string;
+  image: string;
   caption: string;
   date: string;
 }
-function Instagram({ imageUrl, caption, date }: Props) {
+function Instagram({ image, caption, date }: Props) {
   return (
     <div className="bg-white basis-full xs:basis-[46%]  md:basis-[22%]  pb-8  rounded-md relative">
       <div className="flex justify-between items-center py-1 px-2">
@@ -29,7 +29,7 @@ function Instagram({ imageUrl, caption, date }: Props) {
         </div>
       </div>
       <div>
-        <Image src={imageUrl} alt="instagram-food" width={500} height={500} objectFit="cover" />
+        <Image src={image} alt="instagram-food" width={500} height={500} objectFit="cover" />
       </div>
       <div className="flex items-center py-2 px-2 relative">
         <a href="" className="mr-2">
