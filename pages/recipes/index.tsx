@@ -8,13 +8,14 @@ import SearchBar from "@/components/SearchBar/SearchBar";
 import Subscribe from "@/components/Subscribe/Subscribe";
 import Container from "@/components/UI/Container";
 import Title from "@/components/UI/Title";
-import { categoriesData } from "../../data";
+// import { categories } from "../../data";
 import RecipeModel from "@/models/Recipe";
 import { GetServerSidePropsContext } from "next";
 import { addFilters } from "@/utils/addFilters";
 import { useQuery, useQueryClient } from "react-query";
 import { getRecipes } from "@/services/recipesApi";
 import { stringify } from "@/utils/stringify";
+import { categories } from "@/components/Categories/data";
 
 interface Props {
   recipesList: IRecipe[];
@@ -82,7 +83,7 @@ function RecipesPage({ recipesList, totalRecipes }: Props) {
       <SearchBar placeholder={"search recipes..."} />
       <div>
         <ul className="flex w-full justify-center gap-4 md:gap-8 flex-wrap mb-6 ">
-          {categoriesData.map(({ id, name }) => (
+          {categories.map(({ id, name }) => (
             <li
               key={id}
               className={`${
@@ -97,7 +98,7 @@ function RecipesPage({ recipesList, totalRecipes }: Props) {
       </div>
       <div className=" flex gap-6 justify-center  mx-auto   flex-wrap min-h-[600px]">
         {recipes.map(({ image, title, category, _id, cookTime }: IRecipe) => (
-          <Recipe key={_id} id={_id} image={image} title={title} category={category} cookTime={cookTime} />
+          <Recipe key={_id} id={_id!} image={image} title={title} category={category} cookTime={cookTime} />
         ))}
       </div>
       <div className="w-auto">

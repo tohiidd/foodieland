@@ -17,7 +17,7 @@ function Recipes({ len }: Props) {
   return (
     <div className="flex gap-4 sm:gap-6 justify-center mx-auto xl:justify-between items-center sm:w-full flex-wrap overflow-hidden">
       {recipes.slice(0, len).map(({ image, title, category, _id, cookTime }: IRecipe) => (
-        <Recipe key={_id} id={_id} image={image} title={title} category={category} cookTime={cookTime} />
+        <Recipe key={_id} id={_id!} image={image} title={title} category={category} cookTime={cookTime} />
       ))}
     </div>
   );

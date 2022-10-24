@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, Dispatch, SetStateAction } from "react";
+import { useEffect, useRef, useState, Dispatch, SetStateAction, useLayoutEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
@@ -32,7 +32,7 @@ function AsideItem({ name, route, icon, options, setAsideOpen }: Props) {
     }
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (router.pathname.includes(name)) {
       setOpened(true);
       setHeight(`${contentElement?.current?.scrollHeight}px`);

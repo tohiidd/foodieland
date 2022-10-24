@@ -16,7 +16,7 @@ interface Props {
 }
 
 function ArticlePage({ article }: Props) {
-  const { _id, title, description, image, createdAt, author, profile } = article;
+  const { _id, title, description, image, createdAt, author } = article;
 
   const date = getDate(createdAt);
   return (
@@ -26,7 +26,7 @@ function ArticlePage({ article }: Props) {
         <div className="flex items-center justify-center 2sm:mb-auto mb-[20px]">
           <div className="w-[40px] h-40px ">
             <Image
-              src={profile}
+              src={""}
               alt="chief"
               width={45}
               height={45}

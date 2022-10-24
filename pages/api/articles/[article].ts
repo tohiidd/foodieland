@@ -3,7 +3,8 @@ import dbConnect from "services/dbConnect";
 import Article from "@/models/Article";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { method, query: id } = req;
+  const { method, query } = req;
+  const id = query.article;
   dbConnect();
 
   if (method === "GET") {

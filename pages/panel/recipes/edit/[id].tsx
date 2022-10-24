@@ -1,8 +1,8 @@
-import { FormEvent, useState, ChangeEvent } from "react";
+import { FormEvent, useState, ChangeEvent, useLayoutEffect } from "react";
 import { useRouter } from "next/router";
 import RecipeDetailsFrom from "@/components/Panel/Recipes/RecipeDetailsFrom";
-import { useMutation, useQueryClient } from "react-query";
-import { addRecipe } from "@/services/recipesApi";
+import { useMutation, useQuery, useQueryClient } from "react-query";
+import { getRecipe, updateRecipe } from "@/services/recipesApi";
 import { IDirection, IIngredients } from "@/types/index";
 import { errorMessage, successMessage } from "@/utils/toastMessages";
 import RecipeMediaForm from "@/components/Panel/Recipes/RecipeMediaForm";
@@ -24,19 +24,23 @@ const initialInputsState = {
   totalFat: "",
 };
 
-function AddRecipePage() {
+function EditRecipePage() {
   const [inputs, setInputs] = useState(initialInputsState);
   const [video, setVideo] = useState({ name: "", url: "" });
   const [directions, setDirections] = useState<IDirection[]>([]);
   const [ingredients, setIngredients] = useState<IIngredients>({ main: [], sauce: [] });
 
   const router = useRouter();
+  const recipeId = typeof router.query?.id === "string" ? router.query.id : "";
 
   const queryClient = useQueryClient();
-  const addRecipeMutation = useMutation(addRecipe, {
+  const { data: recipe, isSuccess } = useQuery(["recipes", recipeId], () => getRecipe(recipeId));
+  console.log(recipe);
+
+  const editRecipeMutation = useMutation(updateRecipe, {
     onSuccess: () => {
       queryClient.invalidateQueries("recipes");
-      successMessage("Recipe created successfully.");
+      successMessage("Recipe updated successfully.");
       router.push("/panel/recipes/list");
     },
     onError: (error: Error) => {
@@ -59,7 +63,8 @@ function AddRecipePage() {
   const submitHandler = (event: FormEvent<any>) => {
     event.preventDefault();
 
-    const newRecipe = {
+    const editedRecipe = {
+      _id: recipe?._id,
       title: inputs.title,
       image: inputs.image,
       banner: inputs.banner,
@@ -79,8 +84,31 @@ function AddRecipePage() {
       directions,
       ingredients,
     };
-    addRecipeMutation.mutate(newRecipe);
+    editRecipeMutation.mutate(editedRecipe);
   };
+
+  useLayoutEffect(() => {
+    if (isSuccess) {
+      setInputs({
+        title: recipe.title,
+        image: recipe.image,
+        banner: recipe.banner,
+        video: { name: "", url: recipe.video },
+        category: recipe.category,
+        chef: recipe.chef,
+        description: recipe.description,
+        cookTime: recipe.cookTime,
+        prepTime: recipe.prepTime,
+        calories: recipe.nutrition.calories,
+        carbohydrate: recipe.nutrition.carbohydrate,
+        cholesterol: recipe.nutrition.cholesterol,
+        protein: recipe.nutrition.protein,
+        totalFat: recipe.nutrition.totalFat,
+      });
+      setDirections(recipe.directions);
+      setIngredients(recipe.ingredients);
+    }
+  }, [recipeId, isSuccess]);
 
   return (
     <section className="p-4 sm:p-8 ">
@@ -105,4 +133,4 @@ function AddRecipePage() {
   );
 }
 
-export default AddRecipePage;
+export default EditRecipePage;

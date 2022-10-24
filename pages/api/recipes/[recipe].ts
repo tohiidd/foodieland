@@ -3,10 +3,13 @@ import dbConnect from "services/dbConnect";
 import Recipe from "@/models/Recipe";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { method, query: id } = req;
+  const { method, query } = req;
+  const id = query.recipe;
+
   await dbConnect();
 
   if (method === "GET") {
+    console.log("recipe");
     try {
       const recipe = await Recipe.findById(id);
       res.status(200).json({ message: "recipe found successfully!", data: recipe });

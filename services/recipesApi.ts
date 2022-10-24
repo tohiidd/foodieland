@@ -2,7 +2,7 @@ import axios from "axios";
 import { IRecipe } from "@/types/index";
 
 interface GetRecipesResponse {
-  message: string;
+  message?: string;
   data: IRecipe[];
   total: number;
 }
@@ -16,9 +16,9 @@ export const getRecipes = async (query: string = ""): Promise<GetRecipesResponse
   return response.data;
 };
 
-export const getRecipe = async (id: string) => {
+export const getRecipe = async (id: string): Promise<IRecipe> => {
   const response = await recipesApi.get(`/${id}`);
-  return response.data;
+  return response.data.data;
 };
 
 export const addRecipe = async (data: IRecipe) => {

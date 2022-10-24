@@ -1,4 +1,4 @@
-import { useEffect, PropsWithChildren, useState } from "react";
+import { useEffect, PropsWithChildren, useState, useLayoutEffect } from "react";
 import Image from "next/image";
 import { useBreakpoint } from "hooks/useBreakpoints";
 import Aside from "../Panel/Aside/Aside";
@@ -12,7 +12,7 @@ function PanelLayout({ children }: PropsWithChildren) {
     setAsideOpen((prev) => !prev);
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (isLg) {
       setAsideOpen(true);
     }

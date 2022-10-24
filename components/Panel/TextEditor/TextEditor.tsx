@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, Dispatch, SetStateAction, ChangeEvent, Mou
 import { Editor, EditorState, RichUtils, AtomicBlockUtils } from "draft-js";
 import { FaBold, FaItalic, FaUnderline, FaLink, FaImage, FaStrikethrough } from "react-icons/fa";
 import { AiOutlineOrderedList, AiOutlineUnorderedList } from "react-icons/ai";
-import { uploadImage } from "@/utils/uploadImage";
+import { fileUploader } from "@/utils/fileUploader";
 import { mediaBlockRenderer } from "./Media";
 
 import "draft-js/dist/Draft.css";
@@ -20,7 +20,7 @@ function TextEditor() {
 
   const handleInsertImage = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event?.target?.files![0];
-    const { url } = await uploadImage(file);
+    const { url } = await fileUploader(file);
     if (!url) return;
 
     const contentState = editorState.getCurrentContent();
