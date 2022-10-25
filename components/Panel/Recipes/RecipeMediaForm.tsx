@@ -3,6 +3,7 @@ import { fileUploader } from "@/utils/fileUploader";
 import { IDirection, IIngredients } from "@/types/index";
 import { BiImageAdd } from "react-icons/bi";
 import { FaPlus } from "react-icons/fa";
+import { useRouter } from "next/router";
 
 interface Props {
   video: { name: string; url: string };
@@ -34,6 +35,9 @@ function RecipeMediaForm({
   const imageUploadRef = useRef<HTMLInputElement>(null);
   const bannerUploadRef = useRef<HTMLInputElement>(null);
   const videoInputRef = useRef<HTMLInputElement>(null);
+
+  const router = useRouter();
+  const isEditPage = router.pathname.includes("/edit/");
 
   const uploadFileHandler = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files![0];
@@ -206,7 +210,7 @@ function RecipeMediaForm({
           type="submit"
           className="bg-blue-500 text-white rounded-md py-2 px-4 w-full sm:w-auto outline-none hover:bg-blue-600 transition-all"
         >
-          Publish
+          {isEditPage ? "Save" : "Publish"}
         </button>
       </div>
     </div>

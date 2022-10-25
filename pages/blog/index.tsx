@@ -36,7 +36,7 @@ function BlogPage({ articlesList, totalArticles }: Props) {
     queries = `${queries}&search=${searchQuery}`;
   }
 
-  const { data: articlesData } = useQuery("articles", () => getArticles(queries), {
+  const { data: articlesData } = useQuery(["articles"], () => getArticles(queries), {
     initialData: { data: articlesList, total: totalArticles },
     refetchOnMount: false,
   });
@@ -44,7 +44,7 @@ function BlogPage({ articlesList, totalArticles }: Props) {
   const total = articlesData?.total ?? 0;
 
   useEffect(() => {
-    queryClient.prefetchQuery("articles", () => getArticles(queries));
+    queryClient.prefetchQuery(["articles"], () => getArticles(queries));
   }, [router.query, queries, queryClient]);
 
   return (
@@ -58,16 +58,8 @@ function BlogPage({ articlesList, totalArticles }: Props) {
       <SearchBar placeholder={"search articles, news..."} />
       <section className=" flex flex-wrap lg:flex-nowrap gap-10 font-inter mt-10 mb-5 lg:mt-20 lg:mb-8">
         <div className=" basis-[100%] lg:basis-[66%] relative ">
-          {articles.map((article: IArticle) => (
-            <Article
-              key={article._id}
-              _id={article._id}
-              title={article.title}
-              description={article.description}
-              image={article.image}
-              createdAt={article.createdAt}
-              author={article.author}
-            />
+          {articles.map((article) => (
+            <Article key={article._id} article={article} />
           ))}
         </div>
         <div className="w-full lg:hidden">

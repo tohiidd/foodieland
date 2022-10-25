@@ -35,7 +35,7 @@ function AddRecipePage() {
   const queryClient = useQueryClient();
   const addRecipeMutation = useMutation(addRecipe, {
     onSuccess: () => {
-      queryClient.invalidateQueries("recipes");
+      queryClient.invalidateQueries(["recipes"]);
       successMessage("Recipe created successfully.");
       router.push("/panel/recipes/list");
     },
@@ -83,7 +83,7 @@ function AddRecipePage() {
   };
 
   return (
-    <section className="p-4 sm:p-8 ">
+    <section className="p-4 sm:p-8 max-w-7xl xl:mx-auto ">
       <form
         className=" text-sm capitalize font-inter text-[#212529] flex items-baseline gap-6 flex-wrap"
         onSubmit={submitHandler}

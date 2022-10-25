@@ -1,18 +1,18 @@
-import ArticleDetailsForm from "@/components/Panel/Articles/ArticleDetailsForm";
+import { useRouter } from "next/router";
 import { useMutation, useQueryClient } from "react-query";
-import { addArticle } from "@/services/articlesApi";
+import ArticleDetailsForm from "@/components/Panel/Articles/ArticleDetailsForm";
+import { updateArticle } from "@/services/articlesApi";
 import { IArticle } from "@/types/index";
 import { errorMessage, successMessage } from "@/utils/toastMessages";
-import { useRouter } from "next/router";
 
-function AddArticlePage() {
+function EditArticlePage() {
   const router = useRouter();
 
   const queryClient = useQueryClient();
-  const addArticleMutation = useMutation(addArticle, {
+  const editArticleMutation = useMutation(updateArticle, {
     onSuccess: () => {
       queryClient.invalidateQueries(["articles"]);
-      successMessage("Article created successfully.");
+      successMessage("Article updated successfully.");
       router.push("/panel/articles/list");
     },
     onError: (error: Error) => {
@@ -21,13 +21,13 @@ function AddArticlePage() {
   });
 
   const sendData = (newArticle: IArticle) => {
-    addArticleMutation.mutate(newArticle);
+    editArticleMutation.mutate(newArticle);
   };
   return (
     <section className="p-4 sm:p-8 max-w-7xl xl:mx-auto">
       <div className="font-inter bg-white  rounded  text-[#212529] ">
         <div className="p-4 border-b border-gray-100 ">
-          <h1 className="font-semibold">ADD ARTICLE FORM</h1>
+          <h1 className="font-semibold">EDIT ARTICLE FORM</h1>
         </div>
         <ArticleDetailsForm sendData={sendData} />
       </div>
@@ -35,4 +35,4 @@ function AddArticlePage() {
   );
 }
 
-export default AddArticlePage;
+export default EditArticlePage;

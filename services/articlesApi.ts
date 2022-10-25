@@ -1,16 +1,20 @@
 import axios from "axios";
 import { IArticle } from "../types";
-
+interface GetArticlesResponse {
+  message?: string;
+  data: IArticle[];
+  total: number;
+}
 const articlesApi = axios.create({
   baseURL: "http://localhost:3000/api/articles",
 });
 
-export const getArticles = async (query: string = "") => {
+export const getArticles = async (query: string = ""): Promise<GetArticlesResponse> => {
   const response = await articlesApi.get(`?${query}`);
   return response?.data;
 };
 
-export const getArticle = async (id: string) => {
+export const getArticle = async (id: string): Promise<IArticle> => {
   const response = await articlesApi.get(`/${id}`);
   return response?.data?.data;
 };

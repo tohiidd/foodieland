@@ -39,10 +39,11 @@ export interface IRecipe {
   directions: IDirection[];
 }
 export interface IArticle {
-  _id: string;
+  _id?: string;
   title: string;
   author: string;
   image: string;
-  createdAt: string;
+  createdAt?: string;
+  shortDescription: string;
   description: string;
 }

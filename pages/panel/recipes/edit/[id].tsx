@@ -31,7 +31,7 @@ function EditRecipePage() {
   const [ingredients, setIngredients] = useState<IIngredients>({ main: [], sauce: [] });
 
   const router = useRouter();
-  const recipeId = typeof router.query?.id === "string" ? router.query.id : "";
+  const recipeId = typeof router.query?.id === "string" ? router.query.id : "undefined";
 
   const queryClient = useQueryClient();
   const { data: recipe, isSuccess } = useQuery(["recipes", recipeId], () => getRecipe(recipeId));
@@ -111,7 +111,7 @@ function EditRecipePage() {
   }, [recipeId, isSuccess]);
 
   return (
-    <section className="p-4 sm:p-8 ">
+    <section className="P-4 sm:P-8 max-w-7xl xl:mx-auto">
       <form
         className=" text-sm capitalize font-inter text-[#212529] flex items-baseline gap-6 flex-wrap"
         onSubmit={submitHandler}

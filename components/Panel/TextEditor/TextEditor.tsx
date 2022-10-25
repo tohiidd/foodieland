@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, Dispatch, SetStateAction, ChangeEvent, MouseEvent } from "react";
+import { useRef, Dispatch, SetStateAction, ChangeEvent, MouseEvent } from "react";
 import { Editor, EditorState, RichUtils, AtomicBlockUtils } from "draft-js";
 import { FaBold, FaItalic, FaUnderline, FaLink, FaImage, FaStrikethrough } from "react-icons/fa";
 import { AiOutlineOrderedList, AiOutlineUnorderedList } from "react-icons/ai";
@@ -8,9 +8,11 @@ import { mediaBlockRenderer } from "./Media";
 import "draft-js/dist/Draft.css";
 import EditorButton from "./EditorButton";
 
-function TextEditor() {
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
-
+interface Props {
+  editorState: EditorState;
+  setEditorState: Dispatch<SetStateAction<EditorState>>;
+}
+function TextEditor({ editorState, setEditorState }: Props) {
   const imageInput = useRef<HTMLInputElement>(null);
 
   const handleToggleClick = (e: React.MouseEvent, inlineStyle: string) => {
@@ -52,7 +54,7 @@ function TextEditor() {
     setEditorState(RichUtils.toggleBlockType(editorState, blockType));
   };
   return (
-    <div className="border border-gray-300 rounded-sm h-80 max-h-80 mt-2">
+    <div className="border border-gray-300 rounded-sm h-96 max-h-96 mt-2 overflow-hidden">
       <div className="flex gap-2 flex-wrap justify-center border-b-gray-300 border-b p-2 ">
         <EditorButton onMouseDown={(e: MouseEvent) => handleToggleClick(e, "BOLD")}>
           <FaBold />

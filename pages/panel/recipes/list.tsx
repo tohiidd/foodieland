@@ -11,7 +11,7 @@ function RecipesListPage() {
 
   const { data: recipesData } = useQuery(["recipes"], () => getRecipes());
   const recipes = recipesData?.data;
-  const total = recipesData?.total;
+  const totalRecipes = recipesData?.total;
 
   const deleteRecipeMutation = useMutation(deleteRecipe, {
     onSuccess: () => {
@@ -28,7 +28,7 @@ function RecipesListPage() {
   };
 
   return (
-    <section className="p-8">
+    <section className="p-4 sm:p-8 max-w-7xl xl:mx-auto">
       <div className="flex gap-12">
         {recipes?.map((recipe) => (
           <div

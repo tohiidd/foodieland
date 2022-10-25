@@ -10,15 +10,19 @@ import { IArticle } from "@/types/index";
 import dbConnect from "@/services/dbConnect";
 import Article from "@/models/Article";
 import { stringify } from "@/utils/stringify";
+import { convertFromRaw, Editor, EditorState } from "draft-js";
 
 interface Props {
   article: IArticle;
 }
 
 function ArticlePage({ article }: Props) {
-  const { _id, title, description, image, createdAt, author } = article;
+  const { _id, title, description, image, createdAt, author, shortDescription } = article;
 
   const date = getDate(createdAt);
+
+  const contentState = convertFromRaw(JSON.parse(description));
+  const editorState = EditorState.createWithContent(contentState);
   return (
     <Container className="mt-20 ">
       <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl xl:text-6xl mt-24 text-center">{title}</h1>
@@ -39,7 +43,8 @@ function ArticlePage({ article }: Props) {
           <p className="font-medium text-sm  text-secondary">{date}</p>
         </div>
       </div>
-      <p className="text-center m-auto w-[80%] mb-[71px] text-secondary">{description}</p>
+
+      <p className="text-center m-auto w-[80%] mb-[71px] text-secondary">{shortDescription}</p>
       <div className=" mb-[71px]  h-[300px] sm:h-[400px] md:h-[500px] xl:h-[600px] relative">
         <Image
           src={image}
@@ -51,7 +56,9 @@ function ArticlePage({ article }: Props) {
         />
       </div>
       <div className="flex justify-center flex-wrap">
-        <div className="basis-[100%] lg:basis-[66%]"></div>
+        <div className="basis-[100%] lg:basis-[66%]">
+          <Editor editorState={editorState} readOnly onChange={() => {}} />
+        </div>
         <div className="basis-[100%] lg:basis-[20%] ">
           <h4 className="mb-[32px] font-semibold text-sm text-center">SHARE THIS ON:</h4>
           <div className="flex flex-row justify-center items-center lg:flex-col">

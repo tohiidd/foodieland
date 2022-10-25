@@ -113,3 +113,30 @@ export const directionsData = [
       "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
   },
 ];
+
+export const authors = [
+  {
+    id: 1,
+    name: "Pragya Subedy",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/author%2Fpragya-subedy.png?alt=media&token=63fce17d-8adb-4f5a-817b-3503b2033354",
+  },
+  {
+    id: 2,
+    name: "Somdatta Saha",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/author%2Fsomdatta-saha.png?alt=media&token=6c4439d0-dadb-4d68-893b-3c1ffea8b650",
+  },
+  {
+    id: 3,
+    name: "Gauri Rohatgi",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/author%2Fgauri-rohtagi.png?alt=media&token=3f66ee8a-8cdb-47bd-ab2b-b30680c8517c",
+  },
+  {
+    id: 4,
+    name: "Priyaja Bakshi",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/author%2Fpriyaja-bakshi.png?alt=media&token=6b202ab3-0587-413e-bd92-246e3291c813",
+  },
+];
