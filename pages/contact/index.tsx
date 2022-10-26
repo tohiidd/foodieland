@@ -1,41 +1,71 @@
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, ChangeEvent, useState } from "react";
 import Image from "next/image";
 import Recipes from "@/components/Recipe/Recipes";
 import Subscribe from "@/components/Subscribe/Subscribe";
 import Button from "@/components/UI/Button";
 import Container from "@/components/UI/Container";
 import Title from "@/components/UI/Title";
+import { useMutation, useQuery } from "react-query";
+import { addMessage } from "@/services/messagesApi";
+import { errorMessage, successMessage } from "@/utils/toastMessages";
+import { IMessage } from "@/types/index";
 
+const initialState: IMessage = { name: "", email: "", subject: "", enquiry: "advertising", message: "" };
 function ContactPage() {
-  const [enteredName, setEnteredName] = useState("");
+  const [inputs, setInputs] = useState(initialState);
   const [nameTouched, setNameTouched] = useState(false);
-  const [enteredEmail, setEnteredEmail] = useState("");
   const [emailTouched, setEmailTouched] = useState(false);
-  const [enteredSubject, setEnteredSubject] = useState("");
   const [subjectTouched, setSubjectTouched] = useState(false);
-  const [enteredMessage, setEnteredMessage] = useState("");
   const [messageTouched, setMessageTouched] = useState(false);
-  const [selectedEnquiry, setSelectedEnquiry] = useState("Advertising");
 
+  const addMessageMutation = useMutation(addMessage, {
+    onSuccess: () => {
+      successMessage("Message submitted successfully!");
+      setInputs(initialState);
+      setNameTouched(false);
+      setEmailTouched(false);
+      setSubjectTouched(false);
+      setMessageTouched(false);
+    },
+    onError: (error: Error) => {
+      errorMessage(error.message);
+    },
+  });
   let nameIsValid = true;
-  if (enteredName?.trim() === "") {
+  if (inputs.name?.trim() === "") {
     nameIsValid = false;
   }
-
   let emailIsValid = true;
-  if (!/^\S+@\S+\.\S+$/.test(enteredEmail!)) {
+  if (!/^\S+@\S+\.\S+$/.test(inputs.email)) {
     emailIsValid = false;
   }
   let subjectIsValid = true;
-  if (enteredSubject?.trim() === "") {
+  if (inputs.subject?.trim() === "") {
     subjectIsValid = false;
   }
   let messageIsValid = true;
-  if (enteredMessage?.trim() === "") {
+  if (inputs.message?.trim() === "") {
     messageIsValid = false;
   }
+
+  type Input = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+  const addInputValueHandler = (event: ChangeEvent<Input>) => {
+    setInputs((prev) => ({ ...prev, [event.target.name]: event.target.value }));
+  };
+
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
+
+    if (!nameIsValid || !emailIsValid || !subjectIsValid || !messageIsValid) return;
+
+    const message = {
+      name: inputs.name,
+      email: inputs.email,
+      subject: inputs.subject,
+      enquiry: inputs.enquiry,
+      message: inputs.message,
+    };
+    addMessageMutation.mutate(message);
   };
 
   const validClasses = "border p-5 rounded-2xl h-full text-sm mb-6 text-black/60 border-gray-900/10 bg-transparent";
@@ -65,11 +95,13 @@ function ContactPage() {
               name
             </label>
             <input
-              onChange={(e) => setEnteredName(e.target.value)}
-              onBlur={() => setNameTouched(true)}
+              onChange={addInputValueHandler}
               className={!nameIsValid && nameTouched ? errorClasses : validClasses}
+              onBlur={() => setNameTouched(true)}
+              value={inputs.name}
               type="text"
               id="name"
+              name="name"
               placeholder="Enter your name..."
             />
           </div>
@@ -78,11 +110,13 @@ function ContactPage() {
               email
             </label>
             <input
-              onChange={(e) => setEnteredEmail(e.target.value)}
-              onBlur={() => setEmailTouched(true)}
+              onChange={addInputValueHandler}
               className={!emailIsValid && emailTouched ? errorClasses : validClasses}
+              onBlur={() => setEmailTouched(true)}
+              value={inputs.email}
               type="email"
               id="email"
+              name="email"
               placeholder="Your email address"
             />
           </div>
@@ -91,11 +125,13 @@ function ContactPage() {
               subject
             </label>
             <input
-              onChange={(e) => setEnteredSubject(e.target.value)}
-              onBlur={() => setSubjectTouched(true)}
+              onChange={addInputValueHandler}
               className={!subjectIsValid && subjectTouched ? errorClasses : validClasses}
+              onBlur={() => setSubjectTouched(true)}
+              value={inputs.subject}
               type="text"
               id="subject"
+              name="subject"
               placeholder="enter subject"
             />
           </div>
@@ -106,8 +142,9 @@ function ContactPage() {
             <select
               className="border border-gray-900/10 p-5 rounded-2xl text-sm  mb-6 w-full text-black/60"
               id="enquiry"
-              onChange={(e) => setSelectedEnquiry(e.target.value)}
-              value={selectedEnquiry}
+              onChange={addInputValueHandler}
+              value={inputs.enquiry}
+              name="enquiry"
             >
               <option className="text-black" value="advertising">
                 Advertising
@@ -125,10 +162,12 @@ function ContactPage() {
               message
             </label>
             <textarea
-              onChange={(e) => setEnteredMessage(e.target.value)}
-              onBlur={() => setMessageTouched(true)}
+              onChange={addInputValueHandler}
               className={!messageIsValid && messageTouched ? errorClasses : validClasses}
+              onBlur={() => setMessageTouched(true)}
+              value={inputs.message}
               id="message"
+              name="message"
               placeholder="Enter your message..."
             />
           </div>

@@ -47,3 +47,12 @@ export interface IArticle {
   shortDescription: string;
   description: string;
 }
+export interface IMessage {
+  _id?: string;
+  name: string;
+  email: string;
+  subject: string;
+  enquiry: "advertising" | "commercials" | "support";
+  message: string;
+  createdAt?: string;
+}

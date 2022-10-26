@@ -54,14 +54,14 @@ function AsideItem({ name, route, icon, options, setAsideOpen }: Props) {
       <ul
         ref={contentElement}
         style={{ height }}
-        className="overflow-hidden transition-all duration-200 pl-7 bg-lightGray"
+        className="overflow-hidden transition-all duration-200 pl-7 bg-lightGray "
       >
         {options.map(({ id, name, route }) => (
           <Link href={`/panel/${route}`} key={id}>
             <li
               className={`${
                 router.pathname.includes(`/panel/${route}`) ? "text-blue-500" : ""
-              } p-3 cursor-pointer hover:text-blue-500 transition-all capitalize`}
+              } p-3  cursor-pointer hover:text-blue-500 transition-all h-11 capitalize box-border`}
               onClick={() => !isLg && setAsideOpen(false)}
             >
               {name}
