@@ -19,7 +19,9 @@ function Article({ article, removeHandler }: Props) {
   const inPanel = router.pathname.includes("/panel");
 
   return (
-    <article className="flex flex-col sm:flex-row  gap-4  rounded-xl w-full relative">
+    <article
+      className={`${inPanel ? "bg-white p-4 " : ""} flex flex-col sm:flex-row  gap-4  rounded-xl w-full relative`}
+    >
       <div className=" basis-[35%] ">
         <Link href={`/blog/${_id}`}>
           <Image
@@ -38,11 +40,18 @@ function Article({ article, removeHandler }: Props) {
             <h4 className="text-xl xl:text-2xl font-bold cursor-pointer">{title}</h4>
           </Link>
 
-          <p className="text-secondary text-xs xl:text-base  ">{shortDescription}</p>
+          <p className="text-secondary text-xs xl:text-base line-clamp-4 leading-[20px] mt-2 ">{shortDescription}</p>
 
           <div className="flex items-center justify-center sm:justify-start mt-4 sm:mt-0 w-full absolute bottom-2">
             <div className="flex items-center   ">
-              <Image src={image} alt="author of blog" width={30} height={30} className="w-8 h-8  rounded-[50%]" />
+              <Image
+                src={image}
+                alt="author of blog"
+                width={30}
+                height={30}
+                objectFit="cover"
+                className="w-8 h-8  rounded-[50%] "
+              />
 
               <p className=" m-[2px] ml-2 font-semibold text-sm  ">{author}</p>
             </div>
@@ -50,7 +59,7 @@ function Article({ article, removeHandler }: Props) {
           </div>
         </div>
       </div>
-      <div className={`${inPanel ? "basis-[5%]" : "hidden"} absolute right-0  text-center`}>
+      <div className={`${inPanel ? "basis-[5%]" : "hidden"} absolute sm:relative right-0  text-center`}>
         <div className="relative">
           <button
             className="cursor-pointer rounded-[50%] transition-all hover:bg-gray-100 p-1 "

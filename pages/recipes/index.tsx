@@ -8,7 +8,6 @@ import SearchBar from "@/components/SearchBar/SearchBar";
 import Subscribe from "@/components/Subscribe/Subscribe";
 import Container from "@/components/UI/Container";
 import Title from "@/components/UI/Title";
-// import { categories } from "../../data";
 import RecipeModel from "@/models/Recipe";
 import { GetServerSidePropsContext } from "next";
 import { addFilters } from "@/utils/addFilters";
@@ -25,7 +24,6 @@ interface Props {
 function RecipesPage({ recipesList, totalRecipes }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [recipesPerPage] = useState(12);
-  const queryClient = useQueryClient();
 
   const router = useRouter();
 
@@ -41,7 +39,7 @@ function RecipesPage({ recipesList, totalRecipes }: Props) {
     queries = `${queries}&search=${searchQuery}`;
   }
 
-  const { data: recipesData } = useQuery("recipes", () => getRecipes(queries), {
+  const { data: recipesData } = useQuery(["recipes", queries], () => getRecipes(queries), {
     initialData: { data: recipesList, total: totalRecipes },
     refetchOnMount: false,
   });
@@ -71,9 +69,6 @@ function RecipesPage({ recipesList, totalRecipes }: Props) {
     }
     setCurrentPage(1);
   };
-  useEffect(() => {
-    queryClient.prefetchQuery("recipes", () => getRecipes(queries));
-  }, [router.query, queries, queryClient]);
 
   return (
     <Container className="mt-16 mb-32">

@@ -1,17 +1,22 @@
-import { deleteRecipe, getRecipes } from "@/services/recipesApi";
-import { errorMessage, successMessage } from "@/utils/toastMessages";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { useMutation, useQuery, useQueryClient } from "react-query";
+import Pagination from "@/components/Pagination/Pagination";
+import { deleteRecipe, getRecipes } from "@/services/recipesApi";
+import { errorMessage, successMessage } from "@/utils/toastMessages";
 
 function RecipesListPage() {
-  const router = useRouter();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [recipesPerPage] = useState(12);
   const queryClient = useQueryClient();
 
-  const { data: recipesData } = useQuery(["recipes"], () => getRecipes());
-  const recipes = recipesData?.data;
-  const totalRecipes = recipesData?.total;
+  let queries = `page=${currentPage}&limit=${recipesPerPage}`;
+
+  const { data: recipesData } = useQuery(["recipes", queries], () => getRecipes(queries));
+  const recipes = recipesData?.data ?? [];
+  const total = recipesData?.total ?? 0;
 
   const deleteRecipeMutation = useMutation(deleteRecipe, {
     onSuccess: () => {
@@ -29,11 +34,11 @@ function RecipesListPage() {
 
   return (
     <section className="p-4 sm:p-8 max-w-7xl xl:mx-auto">
-      <div className="flex gap-12">
+      <div className="flex flex-wrap gap-12">
         {recipes?.map((recipe) => (
           <div
             key={recipe._id}
-            className="basis-1/3 bg-white shadow-[0_1px_6px_1px_rgb(69,65,78,0.1)] rounded border border-solid overflow-hidden"
+            className="basis-[100%] sm:basis-[45%] md:basis-[28%] bg-white shadow-[0_1px_6px_1px_rgb(69,65,78,0.1)] rounded border border-solid overflow-hidden"
           >
             <div>
               <Image src={recipe.image} alt={recipe.title} width={250} height={150} layout="responsive" />
@@ -55,6 +60,16 @@ function RecipesListPage() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="w-auto">
+        {total / recipesPerPage > 1 && (
+          <Pagination
+            postPerPage={recipesPerPage}
+            totalPosts={total}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+        )}
       </div>
     </section>
   );

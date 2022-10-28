@@ -57,7 +57,7 @@ function BlogPage({ articlesList, totalArticles }: Props) {
       </div>
       <SearchBar placeholder={"search articles, news..."} />
       <section className=" flex flex-wrap lg:flex-nowrap gap-10 font-inter mt-10 mb-5 lg:mt-20 lg:mb-8">
-        <div className=" basis-[100%] lg:basis-[66%] relative ">
+        <div className=" basis-[100%] lg:basis-[66%] flex flex-col gap-8 relative ">
           {articles.map((article) => (
             <Article key={article._id} article={article} />
           ))}

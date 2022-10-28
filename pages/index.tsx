@@ -10,7 +10,7 @@ import Button from "../components/UI/Button";
 import Container from "../components/UI/Container";
 import Subtitle from "../components/UI/Subtitle";
 import Title from "../components/UI/Title";
-import { instagramItems } from "../data";
+import { instagramPosts } from "../data";
 import { icons } from "../utils/icons";
 import Recipe from "../models/Recipe";
 import { IRecipe } from "../types";
@@ -37,7 +37,7 @@ function HomePage({ recipes }: Props) {
         </div>
         <div className="flex flex-row flex-wrap justify-center gap-6 md:gap-10">
           {recipes.slice(0, 8).map(({ title, image, category, _id }) => (
-            <BlueRecipe key={_id} id={_id} title={title} image={image} category={category} />
+            <BlueRecipe key={_id} id={_id!} title={title} image={image} category={category} />
           ))}
         </div>
       </Container>
@@ -53,7 +53,7 @@ function HomePage({ recipes }: Props) {
             </Subtitle>
           </div>
           <div className="flex flex-wrap gap-5 xl:gap-8 mt-10 md:mt-16 justify-center  mx-auto">
-            {instagramItems.map(({ id, image, caption, date }) => (
+            {instagramPosts.map(({ id, image, caption, date }) => (
               <Instagram key={id} image={image} caption={caption} date={date} />
             ))}
           </div>

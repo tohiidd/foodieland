@@ -32,15 +32,9 @@ export const asideOptions = [
     route: "/messages",
     options: [],
   },
+
   {
     id: 4,
-    name: "staff",
-    icon: <BsPeopleFill />,
-    route: "/staff",
-    options: [],
-  },
-  {
-    id: 5,
     name: "exit account",
     icon: <FiLogOut />,
     route: "/",

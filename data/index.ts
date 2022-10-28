@@ -28,7 +28,7 @@ export const chefs = [
       "https://firebasestorage.googleapis.com/v0/b/foodieland-3b1ed.appspot.com/o/chefs%2Fchef-4.png?alt=media&token=ac69d2e1-3f30-483b-b3f5-1136d95d4865",
   },
 ];
-export const instagramItems = [
+export const instagramPosts = [
   {
     id: 1,
     image:
@@ -58,62 +58,6 @@ export const instagramItems = [
     date: "September 15",
   },
 ];
-export const ingredientsData = [
-  {
-    id: "4",
-    text: " Lorem ipsum dolor sit amet",
-  },
-  {
-    id: "5",
-    text: " Lorem ipsum dolor sit amet",
-  },
-  {
-    id: "6",
-    text: " Lorem ipsum dolor sit amet",
-  },
-  {
-    id: "7",
-    text: " Lorem ipsum dolor sit amet",
-  },
-  {
-    id: "8",
-    text: " Lorem ipsum dolor sit amet",
-  },
-  {
-    id: "9",
-    text: " Lorem ipsum dolor sit amet",
-  },
-  {
-    id: "10",
-    text: " Lorem ipsum dolor sit amet",
-  },
-  {
-    id: "11",
-    text: " Lorem ipsum dolor sit amet",
-  },
-];
-
-export const directionsData = [
-  {
-    id: 1,
-    title: "Lorem ipsum dolor sit amet",
-    description:
-      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
-  },
-  {
-    id: 2,
-    title: "Lorem ipsum dolor sit amet",
-    description:
-      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
-  },
-  {
-    id: 3,
-    title: "Lorem ipsum dolor sit amet",
-    description:
-      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
-  },
-];
-
 export const authors = [
   {
     id: 1,

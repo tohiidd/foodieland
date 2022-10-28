@@ -13,10 +13,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
 
   const router = useRouter();
-
-  const getLayout = router.pathname.includes("/panel")
-    ? (page: ReactElement) => <PanelLayout>{page}</PanelLayout>
-    : (page: ReactElement) => <MainLayout>{page}</MainLayout>;
+  let getLayout = (page: ReactElement) => {
+    if (router.pathname.includes("/panel")) {
+      return <PanelLayout>{page}</PanelLayout>;
+    }
+    if (router.pathname.includes("/login")) {
+      return <>{page}</>;
+    }
+    return <MainLayout>{page}</MainLayout>;
+  };
 
   return (
     <QueryClientProvider client={queryClient}>

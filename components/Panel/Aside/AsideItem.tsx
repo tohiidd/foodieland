@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { useBreakpoint } from "hooks/useBreakpoints";
+import { signOut } from "next-auth/react";
 interface Props {
   name: string;
   route: string;
@@ -23,9 +24,12 @@ function AsideItem({ name, route, icon, options, setAsideOpen }: Props) {
     if (!route) {
       setOpened(!opened);
       setHeight(!opened ? `${contentElement?.current?.scrollHeight}px` : "0px");
+    } else if (route === "/") {
+      signOut({ redirect: false });
+      router.push("/");
     } else {
-      const path = route === "/" ? "/" : `/panel/${route}`;
-      router.push(path);
+      router.push(`/panel/${route}`);
+
       if (!isLg) {
         setAsideOpen(false);
       }

@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 import { asideOptions } from "./data";
-import AsideItem from "./AsideItem/AsideItem";
+import AsideItem from "./AsideItem";
 
 interface Props {
   setAsideOpen: Dispatch<SetStateAction<boolean>>;
