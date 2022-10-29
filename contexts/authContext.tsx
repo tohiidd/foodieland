@@ -1,4 +1,5 @@
 import Spinner from "@/components/Spinner/Spinner";
+import { useRouter } from "next/router";
 import { createContext, PropsWithChildren, useEffect, useLayoutEffect, useState } from "react";
 
 interface IContext {
@@ -18,7 +19,7 @@ const AuthContext = createContext<IContext>({
 export function AuthContextProvider({ children }: PropsWithChildren) {
   const [token, setToken] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
-
+  const { pathname, replace } = useRouter();
   const isLoggedIn = !!token;
 
   const loginHandler = (token: string) => {
@@ -30,10 +31,22 @@ export function AuthContextProvider({ children }: PropsWithChildren) {
     localStorage.removeItem("token");
   };
   useLayoutEffect(() => {
+    if (!isLoggedIn && pathname.includes("/panel/")) {
+      typeof window !== "undefined" && replace("/login");
+      // return null;
+    }
+    if (isLoggedIn && pathname.includes("/login")) {
+      typeof window !== "undefined" && replace("/");
+      // return null;
+    }
     setToken(window.localStorage.getItem("token"));
     setLoading(false);
   }, []);
 
+  useEffect(() => {}, []);
+
+  console.log(isLoggedIn);
+  console.log(pathname);
   const contextValue = {
     token,
     isLoggedIn,

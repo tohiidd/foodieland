@@ -10,7 +10,6 @@ import RecipeDetails from "../../components/RecipeDetails/RecipeDetails";
 import Subscribe from "../../components/Subscribe/Subscribe";
 import Container from "../../components/UI/Container";
 import Title from "../../components/UI/Title";
-import { directionsData } from "../../data";
 import { stringify } from "@/utils/stringify";
 
 interface Props {
@@ -23,14 +22,14 @@ function RecipePage({ recipe }: Props) {
       <RecipeDetails recipe={recipe} />
       <div className="flex flex-wrap lg:flex-nowrap gap-10 font-inter my-10 lg:my-20">
         <div className="basis-[100%] lg:basis-[66%]">
-          <IngredientsList />
+          <IngredientsList main={recipe.ingredients.main} sauce={recipe.ingredients.sauce} />
           <div className="mt-14 sm:mt-24">
             <div className=" mb-12">
               <h2 className="font-semibold text-3xl md:text-4xl">Directions</h2>
             </div>
             <div>
-              {directionsData.map((dir, index) => (
-                <Direction key={dir.id} title={dir.title} description={dir.description} number={index} />
+              {recipe.directions.map((dir, index) => (
+                <Direction key={dir.title} title={dir.title} description={dir.description} number={index} />
               ))}
             </div>
           </div>

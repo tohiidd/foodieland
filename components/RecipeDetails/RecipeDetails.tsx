@@ -1,3 +1,4 @@
+import { chefs } from "data";
 import Image from "next/image";
 import { IRecipe } from "../../types";
 import { getDate } from "../../utils/getDate.";
@@ -9,8 +10,9 @@ interface Props {
   recipe: IRecipe;
 }
 function RecipeDetails({ recipe }: Props) {
-  const { title, video, description, cookTime, prepTime, nutrition, chef, createdAt, category, chefImg } = recipe;
+  const { title, video, description, cookTime, prepTime, nutrition, chef: chefName, createdAt, category } = recipe;
   const readableDate = getDate(createdAt);
+  const chefDetails = chefs.find((chef) => chef.name === chefName);
 
   return (
     <div className=" flex flex-wrap gap-4 ">
@@ -22,7 +24,7 @@ function RecipeDetails({ recipe }: Props) {
           <div className="basis-[44%] sm:basis-[23%] flex border-r border-gray-300 border-solid ">
             <div>
               <Image
-                src={chefImg}
+                src={chefDetails?.image!}
                 alt="chief"
                 width={45}
                 height={45}
@@ -30,7 +32,7 @@ function RecipeDetails({ recipe }: Props) {
               />
             </div>
             <div className=" ml-2 ">
-              <span className="font-bold block text-xs md:text-sm xl:text-base">{chef}</span>
+              <span className="font-bold block text-xs md:text-sm xl:text-base">{chefName}</span>
               <span className=" text-[10px] xl:text-[12px]  font-medium">{readableDate}</span>
             </div>
           </div>

@@ -1,11 +1,14 @@
-import { useEffect, PropsWithChildren, useState, useLayoutEffect } from "react";
+import { useEffect, PropsWithChildren, useState, useLayoutEffect, useContext } from "react";
 import Image from "next/image";
 import { useBreakpoint } from "hooks/useBreakpoints";
 import Aside from "../Panel/Aside/Aside";
+import { useRouter } from "next/router";
+import AuthContext from "contexts/authContext";
 
 function PanelLayout({ children }: PropsWithChildren) {
   const [asideOpen, setAsideOpen] = useState(false);
-
+  const { replace, pathname } = useRouter();
+  const { login, isLoggedIn } = useContext(AuthContext);
   const { isLg } = useBreakpoint("lg");
 
   const drawerToggler = () => {
@@ -17,6 +20,10 @@ function PanelLayout({ children }: PropsWithChildren) {
       setAsideOpen(true);
     }
   }, []);
+  // if (!isLoggedIn) {
+  //   typeof window !== "undefined" && replace("/login");
+  //   return null;
+  // }
 
   return (
     <section className="bg-[#f0f0fa] font-inter">

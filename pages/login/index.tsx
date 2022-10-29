@@ -1,4 +1,4 @@
-import { FormEvent, useContext, useState } from "react";
+import { FormEvent, useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { FaFacebookF, FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
 import Spinner from "@/components/Spinner/Spinner";
@@ -10,8 +10,9 @@ import AuthContext from "contexts/authContext";
 function LoginPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const { replace } = useRouter();
-  const { login } = useContext(AuthContext);
+  const [isPageLoading, setIsPageLoading] = useState(true);
+  const { replace, pathname } = useRouter();
+  const { login, isLoggedIn } = useContext(AuthContext);
 
   const loginMutation = useMutation(
     async (data: any) => {
@@ -20,9 +21,9 @@ function LoginPage() {
     },
     {
       onSuccess: (response) => {
+        login(response.token);
         successMessage("Login successfully!");
         replace("/panel/recipes/list");
-        login(response.token);
       },
       onError: (error: Error) => {
         errorToast(error.message);
@@ -44,17 +45,23 @@ function LoginPage() {
     }
 
     loginMutation.mutate({ email, password });
-    // const result = await signIn("credentials", { redirect: false, email, password });
-
-    // if (!result?.error) {
-    //   successMessage("login successfully!");
-    //   replace("/panel/recipes/list");
-    // } else {
-    //   setErrorMessage(result.error);
-    //   setIsLoading(false);
-    // }
   };
-
+  // useEffect(() => {
+  //   if (isLoggedIn && pathname.includes("/login")) {
+  //     typeof window !== "undefined" && replace("/");
+  //   }
+  //   setIsPageLoading(false);
+  // }, []);
+  // if (isPageLoading) {
+  //   return (
+  //     <div className="w-screen h-screen flex justify-center items-center">
+  //       <Spinner full />
+  //     </div>
+  //   );
+  // }
+  // if (isLoggedIn) {
+  //   typeof window !== "undefined" && replace("/");
+  // }
   return (
     <section className="h-[100vh] bg-[#F4F5FA]">
       <div className="h-full flex justify-center items-center">

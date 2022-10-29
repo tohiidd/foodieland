@@ -1,13 +1,16 @@
+import Pagination from "@/components/Pagination/Pagination";
 import { getMessages } from "@/services/messagesApi";
 import { getDate } from "@/utils/getDate.";
 import { GetServerSidePropsContext } from "next";
-import { getSession } from "next-auth/react";
+import { useState } from "react";
 import { useQuery } from "react-query";
 
 function MessagesPage() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [messagesPerPage] = useState(8);
   const { data: messagesData } = useQuery(["messages"], () => getMessages());
   const messages = messagesData?.data ?? [];
-  const totalMessages = messagesData?.total ?? 0;
+  const total = messagesData?.total ?? 0;
 
   return (
     <section className="p-4 sm:p-12 max-w-7xl xl:mx-auto">
@@ -27,6 +30,16 @@ function MessagesPage() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="w-auto">
+        {total / messagesPerPage > 1 && (
+          <Pagination
+            postPerPage={messagesPerPage}
+            totalPosts={total}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+        )}
       </div>
     </section>
   );

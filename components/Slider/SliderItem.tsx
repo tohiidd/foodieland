@@ -1,11 +1,22 @@
+import { chefs } from "data";
 import Image from "next/image";
 import Link from "next/link";
-import { IRecipe } from "../../types";
 import { getDate } from "../../utils/getDate.";
 import { icons } from "../../utils/icons";
 
-function SliderItem({ title, banner, description, id, category, chef, chefImg, createdAt, cookTime }: IRecipe) {
+interface Props {
+  title: string;
+  banner: string;
+  description: string;
+  _id: string;
+  category: string;
+  chef: string;
+  createdAt: string;
+  cookTime: string;
+}
+function SliderItem({ title, banner, description, _id, category, chef: chefName, createdAt, cookTime }: Props) {
   const readableDate = getDate(createdAt);
+  const chefDetails = chefs.find((chef) => chef.name === chefName);
 
   return (
     <div className="carousel-item flex rounded-3xl overflow-hidden font-inter ">
@@ -47,17 +58,17 @@ function SliderItem({ title, banner, description, id, category, chef, chefImg, c
               <Image
                 width={"40px"}
                 height={"40px"}
-                src={chefImg}
+                src={chefDetails?.image!}
                 alt="chief"
                 className="mx-auto object-cover rounded-[50%]"
               />
             </div>
             <div className="ml-2">
-              <span className="font-bold block text-sm lg:text-base">{chef}</span>
+              <span className="font-bold block text-sm lg:text-base">{chefName}</span>
               <span className="carousel-gray-text-color text-xs lg:text-sm font-medium">{readableDate}</span>
             </div>
           </div>
-          <Link href={`recipes/${id}`}>
+          <Link href={`recipes/${_id}`}>
             <a>
               <div className="bg-black text-white lg:hover:pr-10 transition-all rounded-2xl h-full px-3 lg:px-6 text-xs lg:text-sm flex items-center cursor-pointer ">
                 <span className="font-semibold ">View Recipes</span>
@@ -69,7 +80,7 @@ function SliderItem({ title, banner, description, id, category, chef, chefImg, c
       </div>
 
       <div className="basis-full md:basis-1/2 h-72 sm:h-[350px] md:h-auto">
-        <Link href={`recipe/${id}`}>
+        <Link href={`recipe/${_id}`}>
           <div
             className="carousel-bg bg-no-repeat bg-cover w-full h-full bg-center 2xl:h-[600px]"
             style={{

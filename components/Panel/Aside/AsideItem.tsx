@@ -25,7 +25,7 @@ function AsideItem({ name, route, icon, options, setAsideOpen }: Props) {
       setOpened(!opened);
       setHeight(!opened ? `${contentElement?.current?.scrollHeight}px` : "0px");
     } else if (route === "/") {
-      router.replace("/");
+      router.push("/");
       logout();
     } else {
       router.push(`/panel/${route}`);

@@ -23,7 +23,7 @@ interface Props {
 function HomePage({ recipes }: Props) {
   return (
     <section>
-      <HeaderSlider />
+      <HeaderSlider recipes={recipes} />
       <Categories />
       <Container>
         <div className="flex flex-col justify-center items-center">

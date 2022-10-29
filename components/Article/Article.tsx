@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { IArticle } from "@/types/index";
 import { getDate } from "@/utils/getDate.";
+import { authors } from "data";
 
 interface Props {
   article: IArticle;
@@ -13,10 +14,11 @@ interface Props {
 
 function Article({ article, removeHandler }: Props) {
   const [open, setOpen] = useState(false);
-  const { _id, title, createdAt, image, author, shortDescription } = article;
+  const { _id, title, createdAt, image, author: authorName, shortDescription } = article;
   const date = getDate(createdAt);
   const router = useRouter();
   const inPanel = router.pathname.includes("/panel");
+  const authorDetails = authors.find((author) => author.name === authorName);
 
   return (
     <article
@@ -45,7 +47,7 @@ function Article({ article, removeHandler }: Props) {
           <div className="flex items-center justify-center sm:justify-start mt-4 sm:mt-0 w-full absolute bottom-2">
             <div className="flex items-center   ">
               <Image
-                src={image}
+                src={authorDetails?.image!}
                 alt="author of blog"
                 width={30}
                 height={30}
@@ -53,7 +55,7 @@ function Article({ article, removeHandler }: Props) {
                 className="w-8 h-8  rounded-[50%] "
               />
 
-              <p className=" m-[2px] ml-2 font-semibold text-sm  ">{author}</p>
+              <p className=" m-[2px] ml-2 font-semibold text-sm  ">{authorName}</p>
             </div>
             <p className="ml-6 text-gray-500 text-xs text-center ">{date} </p>
           </div>

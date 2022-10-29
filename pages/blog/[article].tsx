@@ -11,15 +11,17 @@ import dbConnect from "@/services/dbConnect";
 import Article from "@/models/Article";
 import { stringify } from "@/utils/stringify";
 import { convertFromRaw, Editor, EditorState } from "draft-js";
+import { authors } from "data";
 
 interface Props {
   article: IArticle;
 }
 
 function ArticlePage({ article }: Props) {
-  const { _id, title, description, image, createdAt, author, shortDescription } = article;
+  const { _id, title, description, image, createdAt, author: authorName, shortDescription } = article;
 
   const date = getDate(createdAt);
+  const authorDetails = authors.find((author) => author.name === authorName);
 
   const contentState = convertFromRaw(JSON.parse(description));
   const editorState = EditorState.createWithContent(contentState);
@@ -30,14 +32,14 @@ function ArticlePage({ article }: Props) {
         <div className="flex items-center justify-center 2sm:mb-auto mb-[20px]">
           <div className="w-[40px] h-40px ">
             <Image
-              src={""}
-              alt="chief"
+              src={authorDetails?.image!}
+              alt="author"
               width={45}
               height={45}
               className="mx-auto flex w-8 h-8 object-cover rounded-[50%]"
             />
           </div>
-          <p className="flex ml-[15px] justify-center font-bold">{author}</p>
+          <p className="flex ml-[15px] justify-center font-bold">{authorName}</p>
         </div>
         <div className="flex items-center 2sm:border-l-[1px] justify-center 2sm:border-r-gray-100 2sm:ml-[61px] px-[24px]">
           <p className="font-medium text-sm  text-secondary">{date}</p>

@@ -1,7 +1,11 @@
-import { ingredientsData } from "../../data";
 import IngredientItem from "./IngredientItem";
 
-function IngredientsList() {
+interface Props {
+  main: string[];
+  sauce: string[];
+}
+
+function IngredientsList({ main, sauce }: Props) {
   return (
     <div>
       <div className="mb-14">
@@ -9,14 +13,14 @@ function IngredientsList() {
       </div>
       <div className=" mb-14">
         <h2 className="font-semibold mb-4 text-xl md:text-2xl">For main dish</h2>
-        {ingredientsData.slice(0, 3).map(({ id, text }) => (
-          <IngredientItem key={id} id={id} text={text} />
+        {main.map((text: string) => (
+          <IngredientItem key={text} id={text} text={text} />
         ))}
       </div>
       <div className="mb-14">
         <h2 className="font-semibold mb-4 text-xl md:text-2xl">For the sauce</h2>
-        {ingredientsData.slice(3, 7).map(({ id, text }) => (
-          <IngredientItem key={id} id={id} text={text} />
+        {sauce.map((text: string) => (
+          <IngredientItem key={text} id={text} text={text} />
         ))}
       </div>
     </div>

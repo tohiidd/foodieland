@@ -14,12 +14,12 @@ import { AuthContextProvider } from "contexts/authContext";
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
 
-  const router = useRouter();
+  const { pathname } = useRouter();
   let getLayout = (page: ReactElement) => {
-    if (router.pathname.includes("/panel")) {
+    if (pathname.includes("/panel")) {
       return <PanelLayout>{page}</PanelLayout>;
     }
-    if (router.pathname.includes("/login")) {
+    if (pathname.includes("/login") || pathname.includes("/404")) {
       return <>{page}</>;
     }
     return <MainLayout>{page}</MainLayout>;
