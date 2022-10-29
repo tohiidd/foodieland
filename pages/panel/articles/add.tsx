@@ -4,6 +4,8 @@ import { addArticle } from "@/services/articlesApi";
 import { IArticle } from "@/types/index";
 import { errorMessage, successMessage } from "@/utils/toastMessages";
 import { useRouter } from "next/router";
+import { GetServerSidePropsContext } from "next";
+import { getSession } from "next-auth/react";
 
 function AddArticlePage() {
   const router = useRouter();

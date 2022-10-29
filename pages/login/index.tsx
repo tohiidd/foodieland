@@ -1,15 +1,35 @@
-import { FormEvent, useState } from "react";
-import { signIn } from "next-auth/react";
+import { FormEvent, useContext, useState } from "react";
+import { useRouter } from "next/router";
 import { FaFacebookF, FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
 import Spinner from "@/components/Spinner/Spinner";
-import { successMessage } from "@/utils/toastMessages";
-import { useRouter } from "next/router";
+import { errorMessage as errorToast, successMessage } from "@/utils/toastMessages";
+import { useMutation } from "react-query";
+import axios from "axios";
+import AuthContext from "contexts/authContext";
 
 function LoginPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const { replace } = useRouter();
+  const { login } = useContext(AuthContext);
 
-  const router = useRouter();
+  const loginMutation = useMutation(
+    async (data: any) => {
+      const response = await axios.post("http://localhost:3000/api/auth", data);
+      return response.data.data;
+    },
+    {
+      onSuccess: (response) => {
+        successMessage("Login successfully!");
+        replace("/panel/recipes/list");
+        login(response.token);
+      },
+      onError: (error: Error) => {
+        errorToast(error.message);
+        setIsLoading(false);
+      },
+    }
+  );
 
   const submitHandler = async (event: FormEvent<any>) => {
     event.preventDefault();
@@ -23,17 +43,18 @@ function LoginPage() {
       return;
     }
 
-    const result = await signIn("credentials", { redirect: false, email, password });
+    loginMutation.mutate({ email, password });
+    // const result = await signIn("credentials", { redirect: false, email, password });
 
-    if (!result?.error) {
-      successMessage("login successfully!");
-      setIsLoading(false);
-      router.push("/panel/recipes/list");
-    } else {
-      setErrorMessage(result.error);
-      setIsLoading(false);
-    }
+    // if (!result?.error) {
+    //   successMessage("login successfully!");
+    //   replace("/panel/recipes/list");
+    // } else {
+    //   setErrorMessage(result.error);
+    //   setIsLoading(false);
+    // }
   };
+
   return (
     <section className="h-[100vh] bg-[#F4F5FA]">
       <div className="h-full flex justify-center items-center">

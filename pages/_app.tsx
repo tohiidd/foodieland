@@ -8,6 +8,8 @@ import { ToastContainer } from "react-toastify";
 
 import "../styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
+import AuthGuard from "@/components/AuthGuard/AuthGuard";
+import { AuthContextProvider } from "contexts/authContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
@@ -25,7 +27,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {getLayout(<Component {...pageProps} />)}
+      <AuthContextProvider>
+        <AuthGuard>{getLayout(<Component {...pageProps} />)}</AuthGuard>
+      </AuthContextProvider>
       <ToastContainer />
     </QueryClientProvider>
   );

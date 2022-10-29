@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState, Dispatch, SetStateAction, useLayoutEffect } from "react";
+import { useEffect, useRef, useState, Dispatch, SetStateAction, useLayoutEffect, useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { useBreakpoint } from "hooks/useBreakpoints";
-import { signOut } from "next-auth/react";
+import AuthContext from "contexts/authContext";
 interface Props {
   name: string;
   route: string;
@@ -16,7 +16,7 @@ function AsideItem({ name, route, icon, options, setAsideOpen }: Props) {
   const [height, setHeight] = useState<string>("0px");
 
   const contentElement = useRef<HTMLUListElement>(null);
-
+  const { logout } = useContext(AuthContext);
   const router = useRouter();
   const { isLg } = useBreakpoint("lg");
 
@@ -25,8 +25,8 @@ function AsideItem({ name, route, icon, options, setAsideOpen }: Props) {
       setOpened(!opened);
       setHeight(!opened ? `${contentElement?.current?.scrollHeight}px` : "0px");
     } else if (route === "/") {
-      signOut({ redirect: false });
-      router.push("/");
+      router.replace("/");
+      logout();
     } else {
       router.push(`/panel/${route}`);
 

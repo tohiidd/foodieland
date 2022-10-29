@@ -4,6 +4,8 @@ import { deleteArticle, getArticles } from "@/services/articlesApi";
 import { errorMessage, successMessage } from "@/utils/toastMessages";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import Pagination from "@/components/Pagination/Pagination";
+import { getSession } from "next-auth/react";
+import { GetServerSidePropsContext } from "next";
 
 function ArticlesListPage() {
   const [currentPage, setCurrentPage] = useState(1);

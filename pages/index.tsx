@@ -21,8 +21,6 @@ interface Props {
 }
 
 function HomePage({ recipes }: Props) {
-  console.log(recipes);
-
   return (
     <section>
       <HeaderSlider />
@@ -31,7 +29,7 @@ function HomePage({ recipes }: Props) {
         <div className="flex flex-col justify-center items-center">
           <Title className="mb-[24px] ">Simple and tasty recipes</Title>
           <Subtitle className="mb-[96px] sm:mb-[80px] ">
-            Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do ediusmod tempor incididunt ut labore et dolore
             magna aliqut enim ad minim
           </Subtitle>
         </div>

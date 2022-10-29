@@ -1,9 +1,9 @@
 import classes from "./styles.module.css";
 
-function Spinner() {
+function Spinner({ full }: { full?: boolean }) {
   return (
     <div className={classes.loadingSpinnerContainer}>
-      <div className={classes.loadingSpinner}></div>
+      <div className={full ? classes.spinnerFull : classes.spinner}></div>
     </div>
   );
 }

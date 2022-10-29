@@ -1,5 +1,7 @@
 import { getMessages } from "@/services/messagesApi";
 import { getDate } from "@/utils/getDate.";
+import { GetServerSidePropsContext } from "next";
+import { getSession } from "next-auth/react";
 import { useQuery } from "react-query";
 
 function MessagesPage() {

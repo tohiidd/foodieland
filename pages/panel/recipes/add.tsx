@@ -6,6 +6,8 @@ import { addRecipe } from "@/services/recipesApi";
 import { IDirection, IIngredients } from "@/types/index";
 import { errorMessage, successMessage } from "@/utils/toastMessages";
 import RecipeMediaForm from "@/components/Panel/Recipes/RecipeMediaForm";
+import { GetServerSidePropsContext } from "next";
+import { getSession } from "next-auth/react";
 
 const initialInputsState = {
   title: "",

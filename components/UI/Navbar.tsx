@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { icons } from "../../utils/icons";
+import { FaUserCircle } from "react-icons/fa";
+import { IoLogIn } from "react-icons/io5";
+import AuthContext from "contexts/authContext";
 
 const menu = [
   {
@@ -27,6 +29,7 @@ const menu = [
 ];
 
 const Navbar = () => {
+  const { isLoggedIn } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const { pathname } = useRouter();
 
@@ -34,9 +37,20 @@ const Navbar = () => {
     <div className=" border-b-[1px] border-gray-300 font-inter">
       <div className="flex py-5 sm:py-[46px] lg:justify-between flex-row-reverse  justify-between sm:items-center mx-6 sm:mx-[80px] ">
         <div className="hidden sm:flex items-center justify-center md:flex-row text-[19.36px] ">
-          <span className="flex justify-center header-icon cursor-pointer">{icons.instagram()}</span>
-          <span className="flex justify-center ml-[40px] header-icon cursor-pointer">{icons.twitter()}</span>
-          <span className="flex justify-center ml-[40px] header-icon cursor-pointer">{icons.facebook()}</span>
+          {!isLoggedIn && (
+            <Link href={"/login"}>
+              <span className="flex justify-center header-icon cursor-pointer">
+                {<IoLogIn className="text-3xl hover:text-blue-500 transition-all" />}
+              </span>
+            </Link>
+          )}{" "}
+          {isLoggedIn && (
+            <Link href={"/panel/recipes/list"}>
+              <span className="flex justify-center header-icon cursor-pointer">
+                {<FaUserCircle className="text-3xl hover:text-blue-500 transition-all" />}
+              </span>
+            </Link>
+          )}
         </div>
         <div className=" lg:order-[0] order-[-1]    relative  items-center">
           <ul

@@ -6,6 +6,8 @@ import { useMutation, useQuery, useQueryClient } from "react-query";
 import Pagination from "@/components/Pagination/Pagination";
 import { deleteRecipe, getRecipes } from "@/services/recipesApi";
 import { errorMessage, successMessage } from "@/utils/toastMessages";
+import { getSession } from "next-auth/react";
+import { GetServerSidePropsContext } from "next";
 
 function RecipesListPage() {
   const [currentPage, setCurrentPage] = useState(1);
