@@ -4,8 +4,6 @@ import ArticleDetailsForm from "@/components/Panel/Articles/ArticleDetailsForm";
 import { updateArticle } from "@/services/articlesApi";
 import { IArticle } from "@/types/index";
 import { errorMessage, successMessage } from "@/utils/toastMessages";
-import { getSession } from "next-auth/react";
-import { GetServerSidePropsContext } from "next";
 
 function EditArticlePage() {
   const router = useRouter();
