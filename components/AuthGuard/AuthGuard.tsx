@@ -7,16 +7,14 @@ export default function AuthGuard({ children }: PropsWithChildren) {
   const { pathname, replace } = useRouter();
   const { isLoggedIn } = useContext(AuthContext);
 
-  useEffect(() => {
-    if (!isLoggedIn && pathname.includes("/panel/")) {
-      typeof window !== "undefined" && replace("/login");
-      // return null;
-    }
-    if (isLoggedIn && pathname.includes("/login")) {
-      typeof window !== "undefined" && replace("/");
-      // return null;
-    }
-  }, []);
+  if (!isLoggedIn && pathname.includes("/panel/")) {
+    typeof window !== "undefined" && replace("/login");
+    return null;
+  }
+  if (isLoggedIn && pathname.includes("/login")) {
+    typeof window !== "undefined" && replace("/");
+    return null;
+  }
 
   return <>{children}</>;
 }

@@ -16,7 +16,7 @@ function LoginPage() {
 
   const loginMutation = useMutation(
     async (data: any) => {
-      const response = await axios.post("http://localhost:3000/api/auth", data);
+      const response = await axios.post("http://localhost:3000/api/auth/login", data);
       return response.data.data;
     },
     {
@@ -46,22 +46,6 @@ function LoginPage() {
 
     loginMutation.mutate({ email, password });
   };
-  // useEffect(() => {
-  //   if (isLoggedIn && pathname.includes("/login")) {
-  //     typeof window !== "undefined" && replace("/");
-  //   }
-  //   setIsPageLoading(false);
-  // }, []);
-  // if (isPageLoading) {
-  //   return (
-  //     <div className="w-screen h-screen flex justify-center items-center">
-  //       <Spinner full />
-  //     </div>
-  //   );
-  // }
-  // if (isLoggedIn) {
-  //   typeof window !== "undefined" && replace("/");
-  // }
   return (
     <section className="h-[100vh] bg-[#F4F5FA]">
       <div className="h-full flex justify-center items-center">

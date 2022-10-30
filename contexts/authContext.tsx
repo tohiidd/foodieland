@@ -31,22 +31,10 @@ export function AuthContextProvider({ children }: PropsWithChildren) {
     localStorage.removeItem("token");
   };
   useLayoutEffect(() => {
-    if (!isLoggedIn && pathname.includes("/panel/")) {
-      typeof window !== "undefined" && replace("/login");
-      // return null;
-    }
-    if (isLoggedIn && pathname.includes("/login")) {
-      typeof window !== "undefined" && replace("/");
-      // return null;
-    }
     setToken(window.localStorage.getItem("token"));
     setLoading(false);
   }, []);
 
-  useEffect(() => {}, []);
-
-  console.log(isLoggedIn);
-  console.log(pathname);
   const contextValue = {
     token,
     isLoggedIn,

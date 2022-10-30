@@ -1,4 +1,5 @@
 import Pagination from "@/components/Pagination/Pagination";
+import Spinner from "@/components/Spinner/Spinner";
 import { getMessages } from "@/services/messagesApi";
 import { getDate } from "@/utils/getDate.";
 import { GetServerSidePropsContext } from "next";
@@ -8,13 +9,18 @@ import { useQuery } from "react-query";
 function MessagesPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [messagesPerPage] = useState(8);
-  const { data: messagesData } = useQuery(["messages"], () => getMessages());
+  const { data: messagesData, isLoading } = useQuery(["messages"], () => getMessages());
   const messages = messagesData?.data ?? [];
   const total = messagesData?.total ?? 0;
 
   return (
     <section className="p-4 sm:p-12 max-w-7xl xl:mx-auto">
       <div className=" bg-white  font-inter p-4 sm:p-8 rounded ">
+        {isLoading && (
+          <div className="py-8">
+            <Spinner blue />
+          </div>
+        )}
         {messages.map(({ _id, name, subject, email, message, createdAt }, index) => (
           <div key={_id} className={`${index === 0 ? "" : "border-t"} border-gray-200 py-6 `}>
             <div className="flex items-center">

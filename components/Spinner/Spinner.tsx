@@ -1,9 +1,13 @@
 import classes from "./styles.module.css";
 
-function Spinner({ full }: { full?: boolean }) {
+interface Props {
+  full?: boolean;
+  blue?: boolean;
+}
+function Spinner({ full, blue }: Props) {
   return (
     <div className={classes.loadingSpinnerContainer}>
-      <div className={full ? classes.spinnerFull : classes.spinner}></div>
+      <div className={`${full ? classes.spinnerFull : classes.spinner} ${blue ? classes.blue : ""}`}></div>
     </div>
   );
 }

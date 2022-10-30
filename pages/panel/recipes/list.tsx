@@ -1,13 +1,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import Pagination from "@/components/Pagination/Pagination";
 import { deleteRecipe, getRecipes } from "@/services/recipesApi";
 import { errorMessage, successMessage } from "@/utils/toastMessages";
-import { getSession } from "next-auth/react";
-import { GetServerSidePropsContext } from "next";
+import Spinner from "@/components/Spinner/Spinner";
 
 function RecipesListPage() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -16,7 +14,7 @@ function RecipesListPage() {
 
   let queries = `page=${currentPage}&limit=${recipesPerPage}`;
 
-  const { data: recipesData } = useQuery(["recipes", queries], () => getRecipes(queries));
+  const { data: recipesData, isLoading } = useQuery(["recipes", queries], () => getRecipes(queries));
   const recipes = recipesData?.data ?? [];
   const total = recipesData?.total ?? 0;
 
@@ -37,6 +35,11 @@ function RecipesListPage() {
   return (
     <section className="p-4 sm:p-8 max-w-7xl xl:mx-auto">
       <div className="flex flex-wrap gap-12">
+        {isLoading && (
+          <div className="py-8 mx-auto  ">
+            <Spinner blue />
+          </div>
+        )}
         {recipes?.map((recipe) => (
           <div
             key={recipe._id}
