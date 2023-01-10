@@ -11,7 +11,7 @@ import dbConnect from "@/services/dbConnect";
 import Article from "@/models/Article";
 import { stringify } from "@/utils/stringify";
 import { convertFromRaw, Editor, EditorState } from "draft-js";
-import { authors } from "data";
+import { authors } from "@/utils/data";
 
 interface Props {
   article: IArticle;

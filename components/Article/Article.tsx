@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { IArticle } from "@/types/index";
 import { getDate } from "@/utils/getDate.";
-import { authors } from "data";
+import { authors } from "@/utils/data";
 
 interface Props {
   article: IArticle;

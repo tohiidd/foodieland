@@ -1,20 +1,22 @@
-import PanelLayout from "@/components/Layout/PanelLayout";
-import { useRouter } from "next/router";
 import { ReactElement, useState } from "react";
-import { QueryClientProvider, QueryClient } from "react-query";
-import MainLayout from "../components/Layout/MainLayout";
+import { useRouter } from "next/router";
 import { AppProps } from "../node_modules/next/app";
+import { QueryClientProvider, QueryClient } from "react-query";
 import { ToastContainer } from "react-toastify";
+import { SessionProvider } from "next-auth/react";
+
+import PanelLayout from "@/components/Layout/PanelLayout";
+import MainLayout from "@/components/Layout/MainLayout";
+import AuthGuard from "@/components/AuthGuard/AuthGuard";
 
 import "../styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
-import AuthGuard from "@/components/AuthGuard/AuthGuard";
-import { AuthContextProvider } from "contexts/authContext";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
 
   const { pathname } = useRouter();
+
   let getLayout = (page: ReactElement) => {
     if (pathname.includes("/panel")) {
       return <PanelLayout>{page}</PanelLayout>;
@@ -27,10 +29,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthContextProvider>
+      <SessionProvider session={session}>
         <AuthGuard>{getLayout(<Component {...pageProps} />)}</AuthGuard>
-      </AuthContextProvider>
-      <ToastContainer />
+        <ToastContainer />
+      </SessionProvider>
     </QueryClientProvider>
   );
 }

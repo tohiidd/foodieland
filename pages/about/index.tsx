@@ -3,7 +3,7 @@ import Subscribe from "@/components/Subscribe/Subscribe";
 import Container from "@/components/UI/Container";
 import Subtitle from "@/components/UI/Subtitle";
 import Title from "@/components/UI/Title";
-import { chefs } from "../../data";
+import { chefs } from "../../utils/data";
 
 function AboutPage() {
   return (

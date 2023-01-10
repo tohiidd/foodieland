@@ -1,5 +1,5 @@
 import { useState, useRef, FormEvent, ChangeEvent, useEffect } from "react";
-import { authors } from "data";
+import { authors } from "@/utils/data";
 import TextEditor from "../TextEditor/TextEditor";
 import { convertFromRaw, convertToRaw, EditorState } from "draft-js";
 import { fileUploader } from "@/utils/fileUploader";

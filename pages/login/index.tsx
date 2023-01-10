@@ -1,36 +1,12 @@
 import { FormEvent, useContext, useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import { FaFacebookF, FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
 import Spinner from "@/components/Spinner/Spinner";
 import { errorMessage as errorToast, successMessage } from "@/utils/toastMessages";
-import { useMutation } from "react-query";
-import axios from "axios";
-import AuthContext from "contexts/authContext";
+import { signIn } from "next-auth/react";
 
 function LoginPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isPageLoading, setIsPageLoading] = useState(true);
-  const { replace, pathname } = useRouter();
-  const { login, isLoggedIn } = useContext(AuthContext);
-
-  const loginMutation = useMutation(
-    async (data: any) => {
-      const response = await axios.post("http://localhost:3000/api/auth/login", data);
-      return response.data.data;
-    },
-    {
-      onSuccess: (response) => {
-        login(response.token);
-        successMessage("Login successfully!");
-        replace("/panel/recipes/list");
-      },
-      onError: (error: Error) => {
-        errorToast(error.message);
-        setIsLoading(false);
-      },
-    }
-  );
 
   const submitHandler = async (event: FormEvent<any>) => {
     event.preventDefault();
@@ -44,7 +20,21 @@ function LoginPage() {
       return;
     }
 
-    loginMutation.mutate({ email, password });
+    const result = await signIn("credentials", {
+      redirect: true,
+      callbackUrl: "/panel/recipes/list",
+      email,
+      password,
+    });
+    console.log(result);
+
+    if (result?.ok) {
+      successMessage("Login successfully!");
+    }
+    if (result?.error) {
+      errorToast(result?.error);
+      setIsLoading(false);
+    }
   };
   return (
     <section className="h-[100vh] bg-[#F4F5FA]">

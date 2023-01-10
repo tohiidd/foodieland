@@ -1,6 +1,6 @@
 import { ChangeEvent } from "react";
 import { categories } from "@/components/Categories/data";
-import { chefs } from "data";
+import { chefs } from "@/utils/data";
 
 interface Props {
   addInputValueHandler: (event: ChangeEvent<any>) => void;

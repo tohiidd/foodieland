@@ -1,4 +1,4 @@
-import { chefs } from "data";
+import { chefs } from "@/utils/data";
 import Image from "next/image";
 import { IRecipe } from "../../types";
 import { getDate } from "../../utils/getDate.";

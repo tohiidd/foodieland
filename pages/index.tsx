@@ -10,7 +10,7 @@ import Button from "../components/UI/Button";
 import Container from "../components/UI/Container";
 import Subtitle from "../components/UI/Subtitle";
 import Title from "../components/UI/Title";
-import { instagramPosts } from "../data";
+import { instagramPosts } from "../utils/data";
 import { icons } from "../utils/icons";
 import Recipe from "../models/Recipe";
 import { IRecipe } from "../types";
