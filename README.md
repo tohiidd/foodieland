@@ -54,4 +54,4 @@ Created by [@tohiidd]() - feel free to contact me!
 
 ## License
 
-This project is open source and available under the [MIT](https://github.com/tohiidd/foodieland/blob/master/LICENSE.md) license.
+This project is open source and available under the [MIT](https://github.com/tohiidd/foodieland/blob/master/LICENSE) license.
