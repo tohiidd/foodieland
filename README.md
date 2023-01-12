@@ -1,34 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Foodieland
 
-## Getting Started
+> Cooking recipe application.
 
-First, run the development server:
+> Live demo [_here_](http://foodieland-beta.vercel.app/).
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Introduction
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Foodieland is a fullstack application that you can find delicious cooking recipes and read interesting food articles. It is a fully responsive template and works perfectly on all screen sizes and mobile devices. Admin panel provides a clean, friendly user interface and many various functionalities including Add / delete / edit recipes and articles, Manage and observe all messages.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Technologies Used
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- Nextjs - version 12.2.5
+- Typescript - version 4.8.2
+- Node js - version
+- Mongoose - version 6.6.5
+- Tailwind css - version 3.1.8
+- React Query - version 3.39.2
+- Next auth - version 4.18.7
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Follow the following steps to get development environment running.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Clone _'foodieland.git'_ repository
 
-## Deploy on Vercel
+  ```bash
+  git clone https://github.com/tohiidd/foodieland.git
+  ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Install dependencies
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  ```bash
+  npm install
+  ```
+
+- start development server
+
+  ```bash
+  npm run dev
+  ```
+
+---
+
+## Project Status
+
+Project is: _complete_ .
+
+## Contact
+
+Created by [@tohiidd]() - feel free to contact me!
+
+## License
+
+This project is open source and available under the [MIT](https://github.com/tohiidd/foodieland/blob/master/LICENSE) license.
