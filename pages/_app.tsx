@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { AppProps } from "../node_modules/next/app";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ToastContainer } from "react-toastify";
+import NextNProgress from "nextjs-progressbar";
 import { SessionProvider } from "next-auth/react";
 
 import PanelLayout from "@/components/Layout/PanelLayout";
@@ -30,7 +31,11 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <SessionProvider session={session}>
-        <AuthGuard>{getLayout(<Component {...pageProps} />)}</AuthGuard>
+        <AuthGuard>
+          {getLayout(<Component {...pageProps} />)}
+          <NextNProgress options={{ showSpinner: false }} height={3} color="#00c0e9" />
+        </AuthGuard>
+
         <ToastContainer />
       </SessionProvider>
     </QueryClientProvider>
